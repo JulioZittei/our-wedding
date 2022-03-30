@@ -139,10 +139,20 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@radix-ui/colors@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@radix-ui/colors/-/colors-0.1.8.tgz#b08c62536fc462a87632165fb28e9b18f9bd047e"
+  integrity sha512-jwRMXYwC0hUo0mv6wGpuw254Pd9p/R6Td5xsRpOmaWkUHlooNWqVcadgyzlRumMq3xfOTXwJReU0Jv+EIy4Jbw==
+
 "@rushstack/eslint-patch@1.0.8":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.0.8.tgz#be3e914e84eacf16dbebd311c0d0b44aa1174c64"
   integrity sha512-ZK5v4bJwgXldAUA8r3q9YKfCwOqoHTK/ZqRjSeRXQrBXWouoPnS4MQtgC4AXGiiBuUu5wxrRgTlv0ktmM4P1Aw==
+
+"@stitches/core@^1.2.7":
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-1.2.7.tgz#9d421b0635ee2acd65a8f0c078d5f5be8fc81766"
+  integrity sha512-2bSto+jqPjeODcdNvwuXduhUH5b1bROmGNSBj/EVOGk8a8dIdCnoZyXYSxdKlKA9SnedBg94qNO0QQAMvTAz3w==
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -1380,6 +1390,11 @@ react-dom@18.0.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.21.0"
+
+react-icons@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"
+  integrity sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==
 
 react-is@^16.13.1:
   version "16.13.1"
