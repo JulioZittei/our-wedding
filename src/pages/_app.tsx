@@ -1,12 +1,21 @@
 import type { AppProps } from 'next/app';
-import { globalStyles } from '../styles/globalStyles';
+import { darkTheme, globalStyles } from '../styles/stiches.config';
+import { ThemeProvider } from 'next-themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  globalStyles();
   return (
-    <>
+    <ThemeProvider
+      disableTransitionOnChange
+      attribute="class"
+      defaultTheme=""
+      value={{
+        dark: darkTheme.className,
+        light: 'light',
+      }}
+    >
+      {globalStyles()}
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   );
 }
 
