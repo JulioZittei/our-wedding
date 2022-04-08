@@ -1,6 +1,6 @@
 import { css } from '../stiches.config';
 
-export const NavMenu = css({
+export const Root = css({
   borderBottom: '1px solid $slateA6',
   borderTop: '1px solid $slateA6',
 });
@@ -37,25 +37,25 @@ export const NavMenuLink = css({
     bottom: 0,
     left: 0,
     right: 0,
-    height: 2,
+    height: 4,
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
     background: 'linear-gradient(90deg, $pinkA11, $skyA11)',
     opacity: 0,
     transition: 'opacity 0.8s ease-in-out',
   },
-  '&:focus': { position: 'relative', boxShadow: `0 0 0 2px '$slateA7'` },
+  '&:focus:after': { opacity: 1 },
   '&:hover:after': {
     opacity: 1,
   },
 
   '@sm': {
-    fontSize: '$fontSizeSM',
-    lineHeight: '$lineHeightSM',
+    fontSize: '$fontSizeXS',
+    lineHeight: '$lineHeightXS',
   },
   '@md': {
-    fontSize: '$fontSizeMD',
-    lineHeight: '$lineHeightMD',
+    fontSize: '$fontSizeSM',
+    lineHeight: '$lineHeightSM',
   },
   '@lg': {
     fontSize: '$fontSizeDefault',

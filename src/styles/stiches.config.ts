@@ -1,4 +1,4 @@
-import { createStitches } from '@stitches/core';
+import { createStitches } from '@stitches/react';
 import {
   skyA,
   skyDarkA,
@@ -14,7 +14,7 @@ import {
   slateDarkA,
 } from '@radix-ui/colors';
 
-const { css, globalCss, keyframes, theme, createTheme, getCssText, config } = createStitches({
+const { css, globalCss, keyframes, theme, createTheme, getCssText, config, styled } = createStitches({
   theme: {
     colors: {
       ...pinkA,
@@ -23,7 +23,7 @@ const { css, globalCss, keyframes, theme, createTheme, getCssText, config } = cr
       ...slateA,
       ...redA,
       ...yellowA,
-      headerBackground: '#fff',
+      background: '#fff',
     },
     space: {},
     fontSizes: {
@@ -69,7 +69,7 @@ const { css, globalCss, keyframes, theme, createTheme, getCssText, config } = cr
     transitions: {},
   },
   media: {
-    sm: '(min-width: 640px)',
+    sm: '(min-width: 0px)',
     md: '(min-width: 768px)',
     lg: '(min-width: 1024px)',
   },
@@ -83,7 +83,7 @@ const darkTheme = createTheme({
     ...slateDarkA,
     ...redDarkA,
     ...yellowDarkA,
-    headerBackground: '#121212',
+    background: '#121212',
   },
   space: {},
   fontSizes: {},
@@ -106,6 +106,31 @@ const globalStyles = globalCss({
     padding: 0,
     boxSizing: 'border-box',
   },
+
+  h1: {
+    fontSize: '$fontSizeXL',
+    lineHeight: '$lineHeightXL',
+  },
+  h2: {
+    fontSize: '$fontSizeLG',
+    lineHeight: '$lineHeightLG',
+  },
+  h3: {
+    fontSize: '$fontSizeMD',
+    lineHeight: '$lineHeightMD',
+  },
+  h4: {
+    fontSize: '$fontSizeDefault',
+    lineHeight: '$lineHeighDefault',
+  },
+  h5: {
+    fontSize: '$fontSizeSM',
+    lineHeight: '$lineHeightSM',
+  },
+  h6: {
+    fontSize: '$fontSizeXS',
+    lineHeight: '$lineHeightXS',
+  },
 });
 
-export { css, globalCss, keyframes, theme, darkTheme, createTheme, getCssText, config, globalStyles };
+export { styled, css, globalCss, keyframes, theme, darkTheme, createTheme, getCssText, config, globalStyles };

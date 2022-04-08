@@ -4,6 +4,7 @@ import { Logo } from '../components/Logo';
 import { Container } from '../components/Container';
 import { NavigationMenu } from '../components/NavigationMenu';
 import { Hero } from '../components/Hero';
+import { AboutUs } from '../components/AboutUs';
 
 const Home: NextPage = () => {
   return (
@@ -14,12 +15,9 @@ const Home: NextPage = () => {
         </Container>
         <NavigationMenu />
       </Header>
-      <main
-        style={{
-          marginTop: 147,
-        }}
-      >
+      <main>
         <Hero />
+        <AboutUs />
       </main>
     </>
   );

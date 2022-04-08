@@ -1,6 +1,6 @@
 import { css } from '../stiches.config';
 
-export const Container = css({
+export const Root = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -20,8 +20,18 @@ export const FirstName = css({
   background: 'linear-gradient(90deg, $pinkA11, $skyA11)',
   backgroundClip: 'text',
 
-  fontSize: '$fontSize2XL',
-  lineHeight: '$lineHeight2XL',
+  '@sm': {
+    fontSize: '$fontSizeLG',
+    lineHeight: '$lineHeightLG',
+  },
+  '@md': {
+    fontSize: '$fontSizeXL',
+    lineHeight: '$lineHeightXL',
+  },
+  '@lg': {
+    fontSize: '$fontSize2XL',
+    lineHeight: '$lineHeight2XL',
+  },
 });
 
 export const LastName = css({
@@ -29,17 +39,35 @@ export const LastName = css({
   textDecoration: 'none',
   color: '$slateA11',
 
-  fontSize: '$fontSizeDefault',
+  '@sm': {
+    fontSize: '$fontSizeXS',
+  },
+  '@md': {
+    fontSize: '$fontSizeSM',
+  },
+  '@lg': {
+    fontSize: '$fontSizeDefault',
+  },
 });
 
 export const Separator = css({
-  fontFamily: '$primaryFont',
+  fontFamily: '$cinzelFont',
   textDecoration: 'none',
   color: '$slateA11',
-  padding: '.5rem 1rem',
   border: '5px double $slateA6',
   borderRadius: '50%',
   margin: '0 1rem',
 
-  fontSize: '$fontSizeXL',
+  '@sm': {
+    fontSize: '$fontSizeDefault',
+    padding: '.4rem .7rem',
+  },
+  '@md': {
+    fontSize: '$fontSizeLG',
+    padding: '.5rem .8rem',
+  },
+  '@lg': {
+    fontSize: '$fontSizeXL',
+    padding: '.5rem 1rem',
+  },
 });

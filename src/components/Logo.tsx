@@ -1,19 +1,19 @@
-import { styled } from '@stitches/react';
+import { styled } from '../styles/stiches.config';
 import * as LogoCss from '../styles/components/LogoCss';
 
-const StyledContainer = styled('div', LogoCss.Container);
+const StyledRoot = styled('div', LogoCss.Root);
 const StyledBoxName = styled('div', LogoCss.BoxName);
 const StyledFirstName = styled('span', LogoCss.FirstName);
 const StyledLastName = styled('span', LogoCss.LastName);
 
-const Container = StyledContainer;
+const LogoRoot = StyledRoot;
 const BoxName = StyledBoxName;
 const FirstName = StyledFirstName;
 const LastName = StyledLastName;
 
 export function Logo() {
   return (
-    <Container>
+    <LogoRoot>
       <BoxName>
         <FirstName>Élen</FirstName>
         <LastName
@@ -37,6 +37,6 @@ export function Logo() {
           Zittei
         </LastName>
       </BoxName>
-    </Container>
+    </LogoRoot>
   );
 }
