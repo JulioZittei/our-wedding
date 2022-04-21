@@ -12,6 +12,10 @@ import {
   greenDarkA,
   slateA,
   slateDarkA,
+  tealA,
+  blueA,
+  tealDarkA,
+  blueDarkA,
 } from '@radix-ui/colors';
 
 const { css, globalCss, keyframes, theme, createTheme, getCssText, config, styled } = createStitches({
@@ -23,6 +27,8 @@ const { css, globalCss, keyframes, theme, createTheme, getCssText, config, style
       ...slateA,
       ...redA,
       ...yellowA,
+      ...tealA,
+      ...blueA,
       background: '#fff',
     },
     space: {},
@@ -83,6 +89,9 @@ const darkTheme = createTheme({
     ...slateDarkA,
     ...redDarkA,
     ...yellowDarkA,
+    ...greenDarkA,
+    ...tealDarkA,
+    ...blueDarkA,
     background: '#121212',
   },
   space: {},

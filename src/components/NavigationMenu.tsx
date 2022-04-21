@@ -29,10 +29,10 @@ export function NavigationMenu({}: NavigationProps): JSX.Element {
             <NavMenuLink href="/">Sobre nós</NavMenuLink>
           </NavMenuItem>
           <NavMenuItem>
-            <NavMenuLink href="/">The Wedding</NavMenuLink>
+            <NavMenuLink href="/">Save The Date</NavMenuLink>
           </NavMenuItem>
           <NavMenuItem>
-            <NavMenuLink href="/">Save The Date</NavMenuLink>
+            <NavMenuLink href="/">The Wedding</NavMenuLink>
           </NavMenuItem>
           <NavMenuItem>
             <NavMenuLink href="/">Gifts</NavMenuLink>

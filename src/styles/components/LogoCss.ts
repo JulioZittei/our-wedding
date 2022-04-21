@@ -15,9 +15,9 @@ export const BoxName = css({
 
 export const FirstName = css({
   fontFamily: '$cinzelFont',
-  '-webkit-text-fill-color': 'transparent',
   textDecoration: 'none',
-  background: 'linear-gradient(90deg, $pinkA11, $skyA11)',
+  '-webkit-text-fill-color': 'transparent',
+  background: 'linear-gradient(120deg, $tealA11, $greenA8)',
   backgroundClip: 'text',
 
   '@sm': {

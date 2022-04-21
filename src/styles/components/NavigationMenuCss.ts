@@ -1,7 +1,6 @@
 import { css } from '../stiches.config';
 
 export const Root = css({
-  borderBottom: '1px solid $slateA6',
   borderTop: '1px solid $slateA6',
 });
 
@@ -40,7 +39,7 @@ export const NavMenuLink = css({
     height: 4,
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
-    background: 'linear-gradient(90deg, $pinkA11, $skyA11)',
+    background: 'linear-gradient(120deg, $tealA11, $greenA8)',
     opacity: 0,
     transition: 'opacity 0.8s ease-in-out',
   },

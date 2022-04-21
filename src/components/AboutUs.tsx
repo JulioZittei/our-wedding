@@ -2,7 +2,7 @@ import * as AboutUsCss from '../styles/components/AboutUsCss';
 import Image from 'next/image';
 import { styled } from '../styles/stiches.config';
 
-const AboutUsRoot = styled('section', AboutUsCss.AboutUs);
+const AboutUsRoot = styled('section', AboutUsCss.Root);
 const AboutUsContainer = styled('div', AboutUsCss.Container);
 const AboutUsContent = styled('div', AboutUsCss.Content);
 const AboutUsBox = styled('div', AboutUsCss.Box);
@@ -23,7 +23,7 @@ export function AboutUs() {
           <AboutUsBox>
             <AboutUsImageCircle href="/">
               <AboutUsImageLayer>
-                <AboutUsImage width={128} height={128} layout="intrinsic" src="/images/elen.jpg" />
+                <AboutUsImage width={80} height={80} layout="intrinsic" src="/images/elen.jpg" />
               </AboutUsImageLayer>
             </AboutUsImageCircle>
 
@@ -37,12 +37,12 @@ export function AboutUs() {
             </AboutUsContentWrapper>
           </AboutUsBox>
 
-          <AboutUsImage width={128} height={128} layout="intrinsic" src="/images/wedding-ring.png" />
+          <AboutUsImage width={100} height={100} layout="intrinsic" src="/images/wedding-ring.png" />
 
           <AboutUsBox>
             <AboutUsImageCircle href="/">
               <AboutUsImageLayer>
-                <AboutUsImage width={128} height={128} layout="intrinsic" src="/images/julio.jpg" />
+                <AboutUsImage width={80} height={80} layout="intrinsic" src="/images/julio.jpg" />
               </AboutUsImageLayer>
             </AboutUsImageCircle>
 

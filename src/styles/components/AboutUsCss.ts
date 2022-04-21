@@ -1,6 +1,6 @@
 import { css } from '../stiches.config';
 
-export const AboutUs = css({});
+export const Root = css({});
 
 export const Container = css({
   maxWidth: 900,
@@ -45,9 +45,8 @@ export const Wrapper = css({
 });
 
 export const ImageCircle = css({
-  flex: 1,
   padding: '.25rem',
-  background: 'linear-gradient(120deg, $pinkA11, $skyA11)',
+  background: 'linear-gradient(120deg, $tealA11, $greenA8)',
   borderRadius: '100%',
 });
 
@@ -80,7 +79,7 @@ export const Header = css({
     height: 4,
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
-    background: 'linear-gradient(90deg, $pinkA11, $skyA11)',
+    background: 'linear-gradient(120deg, $tealA11, $greenA8)',
   },
 
   '@sm': {
