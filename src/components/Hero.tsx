@@ -1,33 +1,36 @@
 import Image from 'next/image';
+import HeroImage from '../../public/images/noivos-hero.jpeg';
 import * as HeroCss from '../styles/components/HeroCss';
 import { styled } from '../styles/stiches.config';
 
-const HeroRoot = styled('section', HeroCss.Hero);
-const HeroImage = styled(Image, HeroCss.HeroImage);
-const HeroContent = styled('div', HeroCss.HeroContent);
-const HeroHeader = styled('div', HeroCss.HeroHeader);
-const HeroTitle = styled('h1', HeroCss.HeroTitle);
-const HeroSubTitle = styled('h2', HeroCss.HeroSubTitle);
+const Root = styled('section', HeroCss.Root);
+const SimpleImage = styled(Image, HeroCss.Image);
+const Content = styled('div', HeroCss.Content);
+const Header = styled('header', HeroCss.Header);
+const Title = styled('h1', HeroCss.Title);
+const SubTitle = styled('h2', HeroCss.SubTitle);
 
 export function Hero() {
   return (
-    <HeroRoot>
-      <HeroImage
-        src="/images/noivos-hero.jpeg"
+    <Root>
+      <SimpleImage
+        src={HeroImage}
         layout="intrinsic"
         width={6000}
         height={2800}
         objectFit="cover"
-        alt=""
+        priority
+        placeholder="blur"
+        alt="Élen e Julio estão se beijando sentados num banco de parque em formato octagonal, no centro do octagono, atrás do casal tem uma árvore e flores vermelhas. Ao fundo algumas pequenas mesas de restaurante."
       />
-      <HeroContent>
-        <HeroHeader>
-          <HeroTitle>Élen & Julio</HeroTitle>
-          <HeroSubTitle>
+      <Content>
+        <Header>
+          <Title>Élen & Julio</Title>
+          <SubTitle>
             <time dateTime="2022-11-26">26/11/2022</time>
-          </HeroSubTitle>
-        </HeroHeader>
-      </HeroContent>
-    </HeroRoot>
+          </SubTitle>
+        </Header>
+      </Content>
+    </Root>
   );
 }

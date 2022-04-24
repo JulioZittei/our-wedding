@@ -2,43 +2,36 @@ import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { styled } from '../styles/stiches.config';
 import * as NavMenuCss from '../styles/components/NavigationMenuCss';
 
-const StyledNavMenu = styled(NavigationMenuPrimitive.Root, NavMenuCss.Root);
-const StyledNavMenuContainer = styled('div', NavMenuCss.NavMenuContainer);
-const StyledNavMenuList = styled(NavigationMenuPrimitive.List, NavMenuCss.NavMenuList);
-const StyledNavMenuItem = styled(NavigationMenuPrimitive.Item, NavMenuCss.NavMenuItem);
-const StyledNavMenuLink = styled(NavigationMenuPrimitive.Link, NavMenuCss.NavMenuLink);
-
-const NavMenuRoot = StyledNavMenu;
-const NavMenuContainer = StyledNavMenuContainer;
-const NavMenuList = StyledNavMenuList;
-const NavMenuItem = StyledNavMenuItem;
-const NavMenuLink = StyledNavMenuLink;
-const NavMenuIndicator = NavigationMenuPrimitive.Indicator;
+const Root = styled(NavigationMenuPrimitive.Root, NavMenuCss.Root);
+const Container = styled('div', NavMenuCss.NavMenuContainer);
+const List = styled(NavigationMenuPrimitive.List, NavMenuCss.NavMenuList);
+const Item = styled(NavigationMenuPrimitive.Item, NavMenuCss.NavMenuItem);
+const Link = styled(NavigationMenuPrimitive.Link, NavMenuCss.NavMenuLink);
 
 type NavigationProps = React.ComponentProps<typeof NavigationMenuPrimitive.Root> & {};
 
 export function NavigationMenu({}: NavigationProps): JSX.Element {
   return (
-    <NavMenuRoot orientation="horizontal">
-      <NavMenuContainer>
-        <NavMenuList>
-          <NavMenuItem>
-            <NavMenuLink href="/">Home</NavMenuLink>
-          </NavMenuItem>
-          <NavMenuItem>
-            <NavMenuLink href="/">Sobre nós</NavMenuLink>
-          </NavMenuItem>
-          <NavMenuItem>
-            <NavMenuLink href="/">Save The Date</NavMenuLink>
-          </NavMenuItem>
-          <NavMenuItem>
-            <NavMenuLink href="/">The Wedding</NavMenuLink>
-          </NavMenuItem>
-          <NavMenuItem>
-            <NavMenuLink href="/">Gifts</NavMenuLink>
-          </NavMenuItem>
-        </NavMenuList>
-      </NavMenuContainer>
-    </NavMenuRoot>
+    <Root orientation="horizontal">
+      <Container>
+        <List>
+          <Item>
+            <Link href="/">Home</Link>
+          </Item>
+          <Item>
+            <Link href="/">Sobre nós</Link>
+          </Item>
+          <Item>
+            <Link href="/">Save The Date</Link>
+          </Item>
+          <Item>
+            <Link href="/">The Wedding</Link>
+          </Item>
+          <Item>
+            <Link href="/">Gifts</Link>
+          </Item>
+        </List>
+      </Container>
+    </Root>
   );
 }

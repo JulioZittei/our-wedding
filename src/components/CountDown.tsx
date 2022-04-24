@@ -3,13 +3,13 @@ import * as CountDownCss from '../styles/components/CountDown';
 import { styled } from '../styles/stiches.config';
 import moment from 'moment';
 
-const CountDownRoot = styled('section', CountDownCss.Root);
-const CountDownHeader = styled('h2', CountDownCss.Header);
-const CountDownContainer = styled('div', CountDownCss.Container);
-const CountDownWrapper = styled('div', CountDownCss.Wrapper);
-const CountDownTimeBox = styled('div', CountDownCss.TimeBox);
-const CountDownLabel = styled('span', CountDownCss.Label);
-const CountDownData = styled('span', CountDownCss.Data);
+const Root = styled('section', CountDownCss.Root);
+const Header = styled('header', CountDownCss.Header);
+const Container = styled('div', CountDownCss.Container);
+const Wrapper = styled('div', CountDownCss.Wrapper);
+const TimeBox = styled('div', CountDownCss.TimeBox);
+const Date = styled('span', CountDownCss.Date);
+const Label = styled('span', CountDownCss.Label);
 
 export function CountDown() {
   const weddingDate = '26/11/2022 18:00:00';
@@ -20,7 +20,6 @@ export function CountDown() {
   const [days, setDays] = useState(moment.duration(diff).days());
   const [hours, setHours] = useState(moment.duration(diff).hours());
   const [minutes, setMinutes] = useState(moment.duration(diff).minutes());
-  const [seconds, setSeconds] = useState(moment.duration(diff).seconds());
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -30,7 +29,6 @@ export function CountDown() {
       setDays(moment.duration(diff).days());
       setHours(moment.duration(diff).hours());
       setMinutes(moment.duration(diff).minutes());
-      setSeconds(moment.duration(diff).seconds());
     }, 1000);
 
     return () => {
@@ -39,28 +37,30 @@ export function CountDown() {
   }, []);
 
   return (
-    <CountDownRoot>
-      <CountDownContainer>
-        <CountDownHeader>Faltam</CountDownHeader>
-        <CountDownWrapper>
-          <CountDownTimeBox>
-            <CountDownLabel>{months.toString().length > 1 ? months : `0${months}`}</CountDownLabel>
-            <CountDownData>{months == 1 ? 'Mês' : 'Meses'}</CountDownData>
-          </CountDownTimeBox>
-          <CountDownTimeBox>
-            <CountDownLabel>{days.toString().length > 1 ? days : `0${days}`}</CountDownLabel>
-            <CountDownData>{days == 1 ? 'Dia' : 'Dias'}</CountDownData>
-          </CountDownTimeBox>
-          <CountDownTimeBox>
-            <CountDownLabel>{hours.toString().length > 1 ? hours : `0${hours}`}</CountDownLabel>
-            <CountDownData>{hours == 1 ? 'Hora' : 'Horas'}</CountDownData>
-          </CountDownTimeBox>
-          <CountDownTimeBox>
-            <CountDownLabel>{minutes.toString().length > 1 ? minutes : `0${minutes}`}</CountDownLabel>
-            <CountDownData>{minutes == 1 ? 'Minuto' : 'Minutos'}</CountDownData>
-          </CountDownTimeBox>
-        </CountDownWrapper>
-      </CountDownContainer>
-    </CountDownRoot>
+    <Root>
+      <Container>
+        <Header>
+          <h2>Faltam</h2>
+        </Header>
+        <Wrapper>
+          <TimeBox>
+            <Date>{months.toString().length > 1 ? months : `0${months}`}</Date>
+            <Label>{months == 1 ? 'Mês' : 'Meses'}</Label>
+          </TimeBox>
+          <TimeBox>
+            <Date>{days.toString().length > 1 ? days : `0${days}`}</Date>
+            <Label>{days == 1 ? 'Dia' : 'Dias'}</Label>
+          </TimeBox>
+          <TimeBox>
+            <Date>{hours.toString().length > 1 ? hours : `0${hours}`}</Date>
+            <Label>{hours == 1 ? 'Hora' : 'Horas'}</Label>
+          </TimeBox>
+          <TimeBox>
+            <Date>{minutes.toString().length > 1 ? minutes : `0${minutes}`}</Date>
+            <Label>{minutes == 1 ? 'Minuto' : 'Minutos'}</Label>
+          </TimeBox>
+        </Wrapper>
+      </Container>
+    </Root>
   );
 }

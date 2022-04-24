@@ -64,33 +64,38 @@ export const Image = css({
 });
 
 export const Header = css({
-  position: 'relative',
-  textAlign: 'center',
-  textTransform: 'uppercase',
-  fontFamily: '$poppinsFont',
-  fontWeight: 400,
+  marginBottom: '2rem',
+  '&>h2': {
+    position: 'relative',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    fontFamily: '$poppinsFont',
+    fontWeight: 400,
 
-  '&::after': {
-    content: '',
-    position: 'absolute',
-    bottom: -4,
-    left: 0,
-    right: 0,
-    height: 4,
-    borderTopLeftRadius: 4,
-    borderTopRightRadius: 4,
-    background: 'linear-gradient(120deg, $tealA11, $greenA8)',
-  },
+    '&::after': {
+      content: '',
+      position: 'absolute',
+      bottom: -4,
+      left: 0,
+      right: 0,
+      height: 4,
+      borderTopLeftRadius: 4,
+      borderTopRightRadius: 4,
+      background: 'linear-gradient(120deg, $tealA11, $greenA8)',
+    },
 
-  '@sm': {
-    fontSize: '$fontSizeDefault',
-    marginBottom: '2rem',
-  },
-  '@md': {
-    fontSize: '$fontSizeMD',
-  },
-  '@lg': {
-    fontSize: '$fontSizeLG',
+    '@sm': {
+      fontSize: '$fontSizeMD',
+      lineHeight: '$lineHeightMD',
+    },
+    '@md': {
+      fontSize: '$fontSizeMD',
+      lineHeight: '$lineHeightMD',
+    },
+    '@lg': {
+      fontSize: '$fontSizeLG',
+      lineHeight: '$lineHeightLG',
+    },
   },
 });
 
@@ -100,13 +105,16 @@ export const Title = css({
   margin: '1rem 0',
 
   '@sm': {
-    fontSize: '$fontSizeSM',
+    fontSize: '$fontSizeDefault',
+    lineHeight: '$lineHeightDefault',
   },
   '@md': {
     fontSize: '$fontSizeDefault',
+    lineHeight: '$lineHeightDefault',
   },
   '@lg': {
     fontSize: '$fontSizeMD',
+    lineHeight: '$lineHeightMD',
   },
 });
 
@@ -115,12 +123,15 @@ export const Paragraph = css({
   fontFamily: '$poppinsFont',
 
   '@sm': {
-    fontSize: '$fontSizeXS',
+    fontSize: '$fontSizeSM',
+    lineHeight: '$lineHeightSM',
   },
   '@md': {
     fontSize: '$fontSizeSM',
+    lineHeight: '$lineHeightSM',
   },
   '@lg': {
     fontSize: 'fontSizeDefault',
+    lineHeight: '$lineHeightDefault',
   },
 });

@@ -1,37 +1,43 @@
 import { css } from '../stiches.config';
+import { slateA } from '@radix-ui/colors';
 
 export const Root = css({
   background: '$tealA5',
 });
 
 export const Header = css({
-  position: 'relative',
-  textAlign: 'center',
-  textTransform: 'uppercase',
-  fontFamily: '$poppinsFont',
-  fontWeight: 400,
+  marginBottom: '2rem',
+  '&>h2': {
+    position: 'relative',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    fontFamily: '$poppinsFont',
+    fontWeight: 400,
 
-  '&::after': {
-    content: '',
-    position: 'absolute',
-    bottom: -4,
-    left: 0,
-    right: 0,
-    height: 4,
-    borderTopLeftRadius: 4,
-    borderTopRightRadius: 4,
-    background: 'linear-gradient(120deg, $tealA11, $greenA8)',
-  },
+    '&::after': {
+      content: '',
+      position: 'absolute',
+      bottom: -4,
+      left: 0,
+      right: 0,
+      height: 4,
+      borderTopLeftRadius: 4,
+      borderTopRightRadius: 4,
+      background: 'linear-gradient(120deg, $tealA11, $greenA8)',
+    },
 
-  '@sm': {
-    fontSize: '$fontSizeDefault',
-    marginBottom: '2rem',
-  },
-  '@md': {
-    fontSize: '$fontSizeMD',
-  },
-  '@lg': {
-    fontSize: '$fontSizeLG',
+    '@sm': {
+      fontSize: '$fontSizeMD',
+      lineHeight: '$lineHeightMD',
+    },
+    '@md': {
+      fontSize: '$fontSizeMD',
+      lineHeight: '$lineHeightMD',
+    },
+    '@lg': {
+      fontSize: '$fontSizeLG',
+      lineHeight: '$lineHeightLG',
+    },
   },
 });
 
@@ -75,7 +81,7 @@ export const TimeBox = css({
   justifyContent: 'stretch',
   background: '$background',
   borderRadius: '4px',
-  boxShadow: '2px 2px 10px -5px #05294d',
+  boxShadow: `2px 2px 10px -5px ${slateA.slateA2}`,
 
   '@sm': {
     padding: '2rem .5rem',
@@ -88,7 +94,7 @@ export const TimeBox = css({
   },
 });
 
-export const Label = css({
+export const Date = css({
   flex: 1,
   width: '100%',
   color: '$tealA11',
@@ -96,17 +102,20 @@ export const Label = css({
   fontFamily: '$poppinsFont',
 
   '@sm': {
-    fontSize: '$fontSizeLG',
+    fontSize: '$fontSizeXL',
+    lineHeight: '$lineHeightXL',
   },
   '@md': {
     fontSize: '$fontSizeXL',
+    lineHeight: '$lineHeightXL',
   },
   '@lg': {
     fontSize: '$fontSize2XL',
+    lineHeight: '$lineHeight2XL',
   },
 });
 
-export const Data = css({
+export const Label = css({
   flex: 1,
   width: '100%',
   color: '$tealA8',
@@ -116,31 +125,15 @@ export const Data = css({
   fontWeight: 700,
 
   '@sm': {
-    fontSize: '$fontSizeXS',
+    fontSize: '$fontSizeSM',
+    lineHeight: '$lineHeightSM',
   },
   '@md': {
     fontSize: '$fontSizeSM',
+    lineHeight: '$lineHeightSM',
   },
   '@lg': {
     fontSize: '$fontSizeDefault',
-  },
-});
-
-export const FullDate = css({
-  textAlign: 'center',
-  fontFamily: '$poppinsFont',
-  fontWeight: 400,
-  border: '10px double #fff',
-  borderRadius: '4px',
-
-  '@sm': {
-    fontSize: '$fontSizeDefault',
-    marginBottom: '2rem',
-  },
-  '@md': {
-    fontSize: '$fontSizeMD',
-  },
-  '@lg': {
-    fontSize: '$fontSizeLG',
+    lineHeight: '$lineHeightDefault',
   },
 });

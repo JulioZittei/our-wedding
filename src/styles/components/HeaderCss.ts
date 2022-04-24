@@ -1,4 +1,5 @@
 import { css } from '../stiches.config';
+import { slateA } from '@radix-ui/colors';
 
 export const HeaderCss = css({
   position: 'sticky',
@@ -8,6 +9,6 @@ export const HeaderCss = css({
   right: 0,
   zIndex: 9999,
   background: '$background',
-  boxShadow: '1px 1px 10px -5px #05294d',
+  boxShadow: `1px 1px 10px -5px ${slateA.slateA2}`,
   borderBottom: '1px solid $slateA6',
 });

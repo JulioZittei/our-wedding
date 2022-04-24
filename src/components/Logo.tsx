@@ -1,19 +1,14 @@
 import { styled } from '../styles/stiches.config';
 import * as LogoCss from '../styles/components/LogoCss';
 
-const StyledRoot = styled('div', LogoCss.Root);
-const StyledBoxName = styled('div', LogoCss.BoxName);
-const StyledFirstName = styled('span', LogoCss.FirstName);
-const StyledLastName = styled('span', LogoCss.LastName);
-
-const LogoRoot = StyledRoot;
-const BoxName = StyledBoxName;
-const FirstName = StyledFirstName;
-const LastName = StyledLastName;
+const Root = styled('div', LogoCss.Root);
+const BoxName = styled('div', LogoCss.BoxName);
+const FirstName = styled('span', LogoCss.FirstName);
+const LastName = styled('span', LogoCss.LastName);
 
 export function Logo() {
   return (
-    <LogoRoot>
+    <Root>
       <BoxName>
         <FirstName>Élen</FirstName>
         <LastName
@@ -37,6 +32,6 @@ export function Logo() {
           Zittei
         </LastName>
       </BoxName>
-    </LogoRoot>
+    </Root>
   );
 }

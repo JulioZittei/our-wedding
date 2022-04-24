@@ -1,7 +1,7 @@
 import { css } from '../stiches.config';
+import { tealA } from '@radix-ui/colors';
 
 export const Root = css({
-  // background: '$skyA5',
   background: '$background',
 });
 
@@ -16,33 +16,35 @@ export const Container = css({
 });
 
 export const Header = css({
-  position: 'relative',
-  textAlign: 'center',
-  textTransform: 'uppercase',
-  fontFamily: '$poppinsFont',
-  fontWeight: 400,
+  marginBottom: '2rem',
+  '&>h2': {
+    position: 'relative',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    fontFamily: '$poppinsFont',
+    fontWeight: 400,
 
-  '&::after': {
-    content: '',
-    position: 'absolute',
-    bottom: -4,
-    left: 0,
-    right: 0,
-    height: 4,
-    borderTopLeftRadius: 4,
-    borderTopRightRadius: 4,
-    background: 'linear-gradient(120deg, $tealA11, $greenA8)',
-  },
+    '&::after': {
+      content: '',
+      position: 'absolute',
+      bottom: -4,
+      left: 0,
+      right: 0,
+      height: 4,
+      borderTopLeftRadius: 4,
+      borderTopRightRadius: 4,
+      background: 'linear-gradient(120deg, $tealA11, $greenA8)',
+    },
 
-  '@sm': {
-    fontSize: '$fontSizeDefault',
-    marginBottom: '2rem',
-  },
-  '@md': {
-    fontSize: '$fontSizeMD',
-  },
-  '@lg': {
-    fontSize: '$fontSizeLG',
+    '@sm': {
+      fontSize: '$fontSizeMD',
+    },
+    '@md': {
+      fontSize: '$fontSizeMD',
+    },
+    '@lg': {
+      fontSize: '$fontSizeLG',
+    },
   },
 });
 
@@ -71,13 +73,14 @@ export const Wrapper = css({
 });
 
 export const Title = css({
+  textAlign: 'center',
   textTransform: 'uppercase',
   fontFamily: '$poppinsFont',
   color: '$slateA11',
   lineHeight: '2rem',
 
   '@sm': {
-    fontSize: '$fontSizeSM',
+    fontSize: '$fontSizeDefault',
   },
   '@md': {
     fontSize: '$fontSizeDefault',
@@ -91,16 +94,19 @@ export const SubTitle = css({
   color: '$slateA11',
   fontFamily: '$poppinsFont',
   textAlign: 'center',
-  marginBottom: '2rem',
+  marginBottom: '1rem',
 
   '@sm': {
-    fontSize: '$fontSizeXS',
+    fontSize: '$fontSizeSM',
+    lineHeight: '$lineHeightSM',
   },
   '@md': {
     fontSize: '$fontSizeSM',
+    lineHeight: '$lineHeightSM',
   },
   '@lg': {
     fontSize: '$fontSizeDefault',
+    lineHeight: '$lineHeightDefault',
   },
 });
 
@@ -119,24 +125,24 @@ export const LinkButton = css({
   background: '$tealA3',
   padding: '.75rem 1rem',
   borderRadius: 4,
-  border: '1px solid #6FB9AC',
+  border: `1px solid ${tealA.tealA6}`,
   marginTop: '1rem',
-
-  '&:hover': {
-    background: '$tealA4',
-  },
 
   color: '$tealA11',
   fontFamily: '$poppinsFont',
   textDecoration: 'none',
 
-  '@sm': {
-    fontSize: '$fontSizeXS',
+  fontSize: '$fontSizeDefault',
+  lineHeight: '$lineHeightDefault',
+
+  transition: 'All .2s ease-in-out',
+
+  '&>svg': {
+    marginRight: '.75rem',
   },
-  '@md': {
-    fontSize: '$fontSizeSM',
-  },
-  '@lg': {
-    fontSize: '$fontSizeDefault',
+
+  '&:hover': {
+    background: '$tealA4',
+    border: `1px solid ${tealA.tealA7}`,
   },
 });

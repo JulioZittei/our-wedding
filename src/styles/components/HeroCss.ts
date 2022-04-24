@@ -1,34 +1,19 @@
 import { css } from '../stiches.config';
 
-export const Hero = css({
+export const Root = css({
   position: 'relative',
   display: 'flex',
 
-  // '&:after': {
-  //   content: '',
-  //   position: 'absolute',
-  //   bottom: 0,
-  //   left: '50%',
-  //   width: 100,
-  //   height: 100,
-  //   transform: 'translateX(-50%)',
-  //   backgroundImage: 'url("/images/wedding-ring.png")',
-  //   backgroundColor: 'transparent',
-  //   backgroundPosition: 'center',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundSize: 'cover',
-  // },
-});
-
-export const HeroImage = css({
-  width: '100%',
-
   '@sm': {
-    height: '1000px',
+    aspectRatio: 16 / 9,
   },
 });
 
-export const HeroContent = css({
+export const Image = css({
+  width: '100%',
+});
+
+export const Content = css({
   position: 'absolute',
   width: '100%',
   top: 0,
@@ -39,7 +24,7 @@ export const HeroContent = css({
   alignItems: 'center',
 });
 
-export const HeroHeader = css({
+export const Header = css({
   position: 'relative',
   maxWidth: '900px',
   margin: '0 auto',
@@ -62,13 +47,13 @@ export const HeroHeader = css({
   },
 });
 
-export const HeroTitle = css({
+export const Title = css({
   fontFamily: '$cinzelFont',
   color: '#fff',
 
   '@sm': {
-    fontSize: '$fontSizeLG',
-    lineHeight: '$lineHeightXL',
+    fontSize: '$fontSizeXL',
+    lineHeight: '$lineHeight2XL',
   },
   '@md': {
     fontSize: '$fontSizeXL',
@@ -80,17 +65,20 @@ export const HeroTitle = css({
   },
 });
 
-export const HeroSubTitle = css({
+export const SubTitle = css({
   fontFamily: '$cinzelFont',
   color: '#fff',
 
   '@sm': {
-    fontSize: '$fontSizeDefault',
+    fontSize: '$fontSizeLG',
+    lineHeight: '$lineHeightLG',
   },
   '@md': {
     fontSize: '$fontSizeLG',
+    lineHeight: '$lineHeightLG',
   },
   '@lg': {
     fontSize: '$fontSizeXL',
+    lineHeight: '$lineHeightXL',
   },
 });

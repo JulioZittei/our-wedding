@@ -41,23 +41,13 @@ export const NavMenuLink = css({
     borderTopRightRadius: 4,
     background: 'linear-gradient(120deg, $tealA11, $greenA8)',
     opacity: 0,
-    transition: 'opacity 0.8s ease-in-out',
+    transition: 'opacity 0.5s ease-in-out',
   },
   '&:focus:after': { opacity: 1 },
   '&:hover:after': {
     opacity: 1,
   },
 
-  '@sm': {
-    fontSize: '$fontSizeXS',
-    lineHeight: '$lineHeightXS',
-  },
-  '@md': {
-    fontSize: '$fontSizeSM',
-    lineHeight: '$lineHeightSM',
-  },
-  '@lg': {
-    fontSize: '$fontSizeDefault',
-    lineHeight: '$lineHeightDefault',
-  },
+  fontSize: '$fontSizeSM',
+  lineHeight: '$lineHeightSM',
 });
