@@ -19,8 +19,8 @@ const Home: NextPage = () => {
       </Header>
       <main>
         <Hero />
-        <CountDown />
         <AboutUs />
+        <CountDown />
         <SaveTheDate />
       </main>
     </>
