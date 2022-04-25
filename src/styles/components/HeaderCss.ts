@@ -15,5 +15,5 @@ export const Root = css({
 export const Container = css({
   maxWidth: 900,
   margin: '0 auto',
-  padding: '$spaceSM $spaceMD',
+  padding: '$spaceDefault $spaceMD',
 });

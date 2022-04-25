@@ -100,7 +100,7 @@ export const Title = css({
     textAlign: 'center',
     textTransform: 'uppercase',
     fontFamily: '$poppinsFont',
-    color: '$slateA11',
+    color: '$tealA11',
     lineHeight: '2rem',
 
     '@sm': {

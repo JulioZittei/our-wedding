@@ -1,6 +1,8 @@
 import { css } from '../stiches.config';
 
-export const Root = css({});
+export const Root = css({
+  background: '$background',
+});
 
 export const Container = css({
   maxWidth: 900,
