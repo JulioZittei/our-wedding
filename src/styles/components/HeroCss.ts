@@ -1,16 +1,26 @@
 import { css } from '../stiches.config';
+import { slateA } from '@radix-ui/colors';
 
 export const Root = css({
   position: 'relative',
   display: 'flex',
 
   '@sm': {
-    aspectRatio: 16 / 9,
+    aspectRatio: 1.75,
+  },
+
+  '@md': {
+    aspectRatio: 1.75,
+  },
+
+  '@lg': {
+    aspectRatio: 2.75,
   },
 });
 
 export const Image = css({
   width: '100%',
+  filter: 'blur(.125rem)',
 });
 
 export const Content = css({
@@ -37,48 +47,41 @@ export const Header = css({
   alignItems: 'center',
 
   '@sm': {
-    padding: '.5rem',
+    padding: '$spaceSM $spaceDefault',
   },
   '@md': {
-    padding: '1rem',
+    padding: '$spaceDefault $spaceLG',
   },
   '@lg': {
-    padding: '2rem',
+    padding: '$spaceLG $spaceXL',
   },
 });
 
 export const Title = css({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  textAlign: 'center',
   fontFamily: '$cinzelFont',
   color: '#fff',
 
-  '@sm': {
-    fontSize: '$fontSizeXL',
-    lineHeight: '$lineHeight2XL',
+  '&>svg:first-child': {
+    marginRight: '$spaceDefault',
   },
-  '@md': {
-    fontSize: '$fontSizeXL',
-    lineHeight: '$lineHeight2XL',
+  '&>svg:last-child': {
+    marginLeft: '$spaceDefault',
   },
-  '@lg': {
-    fontSize: '$fontSize2XL',
-    lineHeight: '$lineHeight3XL',
-  },
-});
-
-export const SubTitle = css({
-  fontFamily: '$cinzelFont',
-  color: '#fff',
 
   '@sm': {
     fontSize: '$fontSizeLG',
-    lineHeight: '$lineHeightLG',
-  },
-  '@md': {
-    fontSize: '$fontSizeLG',
-    lineHeight: '$lineHeightLG',
-  },
-  '@lg': {
-    fontSize: '$fontSizeXL',
     lineHeight: '$lineHeightXL',
+  },
+  '@md': {
+    fontSize: '$fontSizeXL',
+    lineHeight: '$lineHeight2XL',
+  },
+  '@lg': {
+    fontSize: '$fontSizeXL',
+    lineHeight: '$lineHeight2XL',
   },
 });

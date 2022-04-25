@@ -1,5 +1,4 @@
 import { css } from '../stiches.config';
-import { slateA } from '@radix-ui/colors';
 
 export const Root = css({
   display: 'flex',
@@ -15,33 +14,31 @@ export const BoxName = css({
 });
 
 export const FirstName = css({
+  fontSize: '$fontSizeMD',
+  lineHeight: '$lineHeightMD',
   fontFamily: '$cinzelFont',
   textDecoration: 'none',
   '-webkit-text-fill-color': 'transparent',
   background: 'linear-gradient(120deg, $tealA11, $greenA8)',
   backgroundClip: 'text',
-
-  fontSize: '$fontSizeLG',
-  lineHeight: '$lineHeightLG',
 });
 
 export const LastName = css({
+  fontSize: '$fontSizeXS',
   fontFamily: '$poppinsFont',
+  lineHeight: '$lineHeightXS',
   textDecoration: 'none',
   color: '$slateA11',
-
-  fontSize: '$fontSizeXS',
 });
 
 export const Separator = css({
+  fontSize: '$fontSizeDefault',
   fontFamily: '$cinzelFont',
   textDecoration: 'none',
   color: '$slateA11',
   border: `5px double`,
   borderColor: '$slateA6',
   borderRadius: '50%',
-  margin: '0 1rem',
-
-  fontSize: '$fontSizeDefault',
+  margin: '0 $spaceSM',
   padding: '.4rem .7rem',
 });

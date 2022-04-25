@@ -1,13 +1,18 @@
 import { styled } from '../styles/stiches.config';
-import { ReactNode } from 'react';
-import { HeaderCss } from '../styles/components/HeaderCss';
+import * as HeaderCss from '../styles/components/HeaderCss';
+import { NavigationMenu } from './NavigationMenu';
+import { Logo } from './Logo';
 
-const Root = styled('header', HeaderCss);
+const Root = styled('header', HeaderCss.Root);
+const Container = styled('div', HeaderCss.Container);
 
-interface HeaderProps {
-  children: ReactNode;
-}
-
-export function Header({ children }: HeaderProps) {
-  return <Root>{children}</Root>;
+export function Header() {
+  return (
+    <Root>
+      <Container>
+        <Logo />
+      </Container>
+      <NavigationMenu />
+    </Root>
+  );
 }

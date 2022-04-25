@@ -1,54 +1,26 @@
 import { css } from '../stiches.config';
-import { slateA } from '@radix-ui/colors';
 
 export const Root = css({
   background: '$tealA5',
 });
 
-export const Header = css({
-  marginBottom: '2rem',
-  '&>h2': {
-    position: 'relative',
-    textAlign: 'center',
-    textTransform: 'uppercase',
-    fontFamily: '$poppinsFont',
-    fontWeight: 400,
-
-    '&::after': {
-      content: '',
-      position: 'absolute',
-      bottom: -4,
-      left: 0,
-      right: 0,
-      height: 4,
-      borderTopLeftRadius: 4,
-      borderTopRightRadius: 4,
-      background: 'linear-gradient(120deg, $tealA11, $greenA8)',
-    },
-
-    '@sm': {
-      fontSize: '$fontSizeMD',
-      lineHeight: '$lineHeightMD',
-    },
-    '@md': {
-      fontSize: '$fontSizeMD',
-      lineHeight: '$lineHeightMD',
-    },
-    '@lg': {
-      fontSize: '$fontSizeLG',
-      lineHeight: '$lineHeightLG',
-    },
-  },
-});
-
 export const Container = css({
   maxWidth: 900,
   margin: '0 auto',
-  padding: '2rem .5rem',
+  padding: ' .5rem',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-between',
+  '@sm': {
+    padding: '$spaceMD $spaceMD',
+  },
+  '@md': {
+    padding: '$spaceXL $spaceMD',
+  },
+  '@lg': {
+    padding: '$spaceXL $spaceMD',
+  },
 });
 
 export const Wrapper = css({
@@ -60,12 +32,12 @@ export const Wrapper = css({
   '@sm': {
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
-    gap: '1rem',
+    gap: '$spaceDefault',
   },
   '@md': {
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
-    gap: '1rem',
+    gap: '$spaceDefault',
   },
   '@lg': {
     justifyContent: 'space-between',
@@ -81,16 +53,17 @@ export const TimeBox = css({
   justifyContent: 'stretch',
   background: '$background',
   borderRadius: '4px',
-  boxShadow: `2px 2px 10px -5px ${slateA.slateA2}`,
+  boxShadow: `2px 2px 10px -5px #1a1d1e`,
+  boxShadowColor: '$slateA2',
 
   '@sm': {
-    padding: '2rem .5rem',
+    padding: '$spaceLG $spaceSM',
   },
   '@md': {
-    padding: '2rem 1rem',
+    padding: '$spaceLG $spaceDefault',
   },
   '@lg': {
-    padding: '2rem',
+    padding: '$spaceLG',
   },
 });
 
@@ -102,16 +75,16 @@ export const Date = css({
   fontFamily: '$poppinsFont',
 
   '@sm': {
-    fontSize: '$fontSizeXL',
-    lineHeight: '$lineHeightXL',
+    fontSize: '$fontSizeLG',
+    lineHeight: '$lineHeightLG',
   },
   '@md': {
     fontSize: '$fontSizeXL',
     lineHeight: '$lineHeightXL',
   },
   '@lg': {
-    fontSize: '$fontSize2XL',
-    lineHeight: '$lineHeight2XL',
+    fontSize: '$fontSizeXL',
+    lineHeight: '$lineHeightXL',
   },
 });
 
@@ -121,19 +94,17 @@ export const Label = css({
   color: '$tealA8',
   textAlign: 'center',
   fontFamily: '$poppinsFont',
-  fontSize: '$fontSizeDefault',
-  fontWeight: 700,
 
   '@sm': {
-    fontSize: '$fontSizeSM',
-    lineHeight: '$lineHeightSM',
-  },
-  '@md': {
-    fontSize: '$fontSizeSM',
-    lineHeight: '$lineHeightSM',
-  },
-  '@lg': {
     fontSize: '$fontSizeDefault',
     lineHeight: '$lineHeightDefault',
+  },
+  '@md': {
+    fontSize: '$fontSizeMD',
+    lineHeight: '$lineHeightMD',
+  },
+  '@lg': {
+    fontSize: '$fontSizeMD',
+    lineHeight: '$lineHeightMD',
   },
 });

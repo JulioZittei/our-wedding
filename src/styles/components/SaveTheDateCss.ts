@@ -1,5 +1,6 @@
 import { css } from '../stiches.config';
 import { tealA } from '@radix-ui/colors';
+import { slateA } from '@radix-ui/colors';
 
 export const Root = css({
   background: '$background',
@@ -13,16 +14,33 @@ export const Container = css({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-between',
+  '@sm': {
+    padding: '$spaceMD $spaceMD',
+  },
+  '@md': {
+    padding: '$spaceXL $spaceMD',
+  },
+  '@lg': {
+    padding: '$spaceXL $spaceMD',
+  },
 });
 
 export const Header = css({
-  marginBottom: '2rem',
+  '@sm': {
+    marginBottom: '$spaceDefault',
+  },
+  '@md': {
+    marginBottom: '$spaceLG',
+  },
+  '@lg': {
+    marginBottom: '$spaceLG',
+  },
   '&>h2': {
     position: 'relative',
     textAlign: 'center',
     textTransform: 'uppercase',
     fontFamily: '$poppinsFont',
-    fontWeight: 400,
+    fontWeight: 'bold',
 
     '&::after': {
       content: '',
@@ -38,12 +56,15 @@ export const Header = css({
 
     '@sm': {
       fontSize: '$fontSizeMD',
+      lineHeight: '$lineHeightMD',
     },
     '@md': {
-      fontSize: '$fontSizeMD',
+      fontSize: '$fontSizeLG',
+      lineHeight: '$lineHeightLG',
     },
     '@lg': {
       fontSize: '$fontSizeLG',
+      lineHeight: '$lineHeightLG',
     },
   },
 });
@@ -63,30 +84,34 @@ export const Wrapper = css({
   '@sm': {
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
+    gap: '$spaceDefault',
   },
   '@md': {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    gap: '$spaceLG',
   },
 });
 
 export const Title = css({
-  textAlign: 'center',
-  textTransform: 'uppercase',
-  fontFamily: '$poppinsFont',
-  color: '$slateA11',
-  lineHeight: '2rem',
+  '&>time': {
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    fontFamily: '$poppinsFont',
+    color: '$slateA11',
+    lineHeight: '2rem',
 
-  '@sm': {
-    fontSize: '$fontSizeDefault',
-  },
-  '@md': {
-    fontSize: '$fontSizeDefault',
-  },
-  '@lg': {
-    fontSize: '$fontSizeMD',
+    '@sm': {
+      fontSize: '$fontSizeDefault',
+    },
+    '@md': {
+      fontSize: '$fontSizeMD',
+    },
+    '@lg': {
+      fontSize: '$fontSizeMD',
+    },
   },
 });
 
@@ -94,20 +119,9 @@ export const SubTitle = css({
   color: '$slateA11',
   fontFamily: '$poppinsFont',
   textAlign: 'center',
-  marginBottom: '1rem',
-
-  '@sm': {
-    fontSize: '$fontSizeSM',
-    lineHeight: '$lineHeightSM',
-  },
-  '@md': {
-    fontSize: '$fontSizeSM',
-    lineHeight: '$lineHeightSM',
-  },
-  '@lg': {
-    fontSize: '$fontSizeDefault',
-    lineHeight: '$lineHeightDefault',
-  },
+  fontSize: '$fontSizeXS',
+  lineHeight: '$lineHeightXS',
+  marginBottom: '$spaceDefault',
 });
 
 export const Card = css({
@@ -115,34 +129,44 @@ export const Card = css({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '1rem',
 });
 
 export const LinkButton = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-evenly',
-  background: '$tealA3',
-  padding: '.75rem 1rem',
+  background: '$tealA9',
+  padding: '.75rem $spaceDefault',
   borderRadius: 4,
   border: `1px solid ${tealA.tealA6}`,
-  marginTop: '1rem',
 
-  color: '$tealA11',
+  color: '#fff',
   fontFamily: '$poppinsFont',
   textDecoration: 'none',
-
-  fontSize: '$fontSizeDefault',
-  lineHeight: '$lineHeightDefault',
+  fontSize: '$fontSizeSM',
+  lineHeight: '$lineHeightSM',
+  boxShadow: `0 0 0 2px ${slateA.slateA7}`,
 
   transition: 'All .2s ease-in-out',
 
   '&>svg': {
     marginRight: '.75rem',
+    fontSize: '$fontSizeDefault',
+    lineHeight: '$lineHeightDefault',
   },
 
   '&:hover': {
-    background: '$tealA4',
+    background: '$tealA10',
     border: `1px solid ${tealA.tealA7}`,
+  },
+
+  '@sm': {
+    marginTop: '$spaceXS',
+  },
+  '@md': {
+    marginTop: '$spaceSM',
+  },
+  '@lg': {
+    marginTop: '$spaceSM',
   },
 });

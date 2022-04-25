@@ -2,13 +2,13 @@ import Image from 'next/image';
 import HeroImage from '../../public/images/noivos-hero.jpeg';
 import * as HeroCss from '../styles/components/HeroCss';
 import { styled } from '../styles/stiches.config';
+import { GiVineFlower } from 'react-icons/gi';
 
 const Root = styled('section', HeroCss.Root);
 const SimpleImage = styled(Image, HeroCss.Image);
 const Content = styled('div', HeroCss.Content);
 const Header = styled('header', HeroCss.Header);
 const Title = styled('h1', HeroCss.Title);
-const SubTitle = styled('h2', HeroCss.SubTitle);
 
 export function Hero() {
   return (
@@ -16,8 +16,8 @@ export function Hero() {
       <SimpleImage
         src={HeroImage}
         layout="intrinsic"
-        width={6000}
-        height={2800}
+        width={1920}
+        height={1080}
         objectFit="cover"
         priority
         placeholder="blur"
@@ -25,10 +25,9 @@ export function Hero() {
       />
       <Content>
         <Header>
-          <Title>Élen & Julio</Title>
-          <SubTitle>
-            <time dateTime="2022-11-26">26/11/2022</time>
-          </SubTitle>
+          <Title>
+            <GiVineFlower /> Élen & Julio <GiVineFlower />
+          </Title>
         </Header>
       </Content>
     </Root>

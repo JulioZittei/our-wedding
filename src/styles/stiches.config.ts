@@ -31,20 +31,27 @@ const { css, globalCss, keyframes, theme, createTheme, getCssText, config, style
       ...blueA,
       background: '#fff',
     },
-    space: {},
+    space: {
+      spaceXS: '0.25rem', // 4px
+      spaceSM: '0.5rem', // 8px
+      spaceDefault: '1rem', // 16px
+      spaceMD: '1.5rem', // 24px
+      spaceLG: '2rem', // 32px
+      spaceXL: '4rem', // 64px
+    },
     fontSizes: {
-      fontSize2XS: '0.625rem',
-      fontSizeXS: '0.75rem',
-      fontSizeSM: '0.825rem',
-      fontSizeDefault: '1rem',
-      fontSizeMD: '1.25rem',
-      fontSizeLG: '1.5rem',
-      fontSizeXL: '2rem',
-      fontSize2XL: '2.5rem',
-      fontSize3XL: '3rem',
-      fontSize4XL: '3.75rem',
-      fontSize5XL: '4.75rem',
-      fontSize6XL: '6rem',
+      fontSize2XS: '0.625rem', // 10px
+      fontSizeXS: '0.75rem', // 12px
+      fontSizeSM: '0.875rem', // 14px
+      fontSizeDefault: '1rem', // 16px
+      fontSizeMD: '1.125rem', // 18px
+      fontSizeLG: '1.5rem', // 24px
+      fontSizeXL: '2.25rem', // 36px
+      fontSize2XL: '2.5rem', // 40px
+      fontSize3XL: '3rem', // 48px
+      fontSize4XL: '3.75rem', // 60px
+      fontSize5XL: '4.75rem', // 76px
+      fontSize6XL: '6rem', // 96px
     },
     fonts: {
       cinzelFont: "'Cinzel Decorative', cursive",
@@ -52,18 +59,18 @@ const { css, globalCss, keyframes, theme, createTheme, getCssText, config, style
     },
     fontWeights: {},
     lineHeights: {
-      lineHeight2XS: '0.875rem',
-      lineHeightXS: '1rem',
-      lineHeightSM: '1.075rem',
-      lineHeightDefault: '1.25rem',
-      lineHeightMD: '1.50rem',
-      lineHeightLG: '1.75rem',
-      lineHeightXL: '2.25rem',
-      lineHeight2XL: '2.75rem',
-      lineHeight3XL: '3.25rem',
-      lineHeight4XL: '4rem',
-      lineHeight5XL: '5rem',
-      lineHeight6XL: '6.25rem',
+      lineHeight2XS: '0.875rem', // 14px
+      lineHeightXS: '1rem', // 16px
+      lineHeightSM: '1.125rem', // 18px
+      lineHeightDefault: '1.25rem', // 20px
+      lineHeightMD: '1.375rem', // 22px
+      lineHeightLG: '1.75rem', // 28px
+      lineHeightXL: '2.5rem', // 40px
+      lineHeight2XL: '2.75rem', // 44px
+      lineHeight3XL: '3.25rem', // 52px
+      lineHeight4XL: '4rem', // 64px
+      lineHeight5XL: '5rem', // 80px
+      lineHeight6XL: '6.25rem', // 100px
     },
     letterSpacings: {},
     sizes: {},

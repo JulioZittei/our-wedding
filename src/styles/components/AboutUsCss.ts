@@ -5,11 +5,19 @@ export const Root = css({});
 export const Container = css({
   maxWidth: 900,
   margin: '0 auto',
-  padding: '2rem .5rem',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
+  '@sm': {
+    padding: '$spaceMD $spaceMD',
+  },
+  '@md': {
+    padding: '$spaceXL $spaceMD',
+  },
+  '@lg': {
+    padding: '$spaceXL $spaceMD',
+  },
 });
 
 export const Content = css({
@@ -45,7 +53,7 @@ export const Wrapper = css({
 });
 
 export const ImageCircle = css({
-  padding: '.25rem',
+  padding: '$spaceXS',
   background: 'linear-gradient(120deg, $tealA11, $greenA8)',
   borderRadius: '100%',
 });
@@ -54,7 +62,7 @@ export const ImageLayer = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '.25rem',
+  padding: '$spaceXS',
   background: '$background',
   borderRadius: '100%',
 });
@@ -64,13 +72,22 @@ export const Image = css({
 });
 
 export const Header = css({
-  marginBottom: '2rem',
+  '@sm': {
+    marginBottom: '$spaceDefault',
+  },
+  '@md': {
+    marginBottom: '$spaceLG',
+  },
+  '@lg': {
+    marginBottom: '$spaceLG',
+  },
+
   '&>h2': {
     position: 'relative',
     textAlign: 'center',
     textTransform: 'uppercase',
     fontFamily: '$poppinsFont',
-    fontWeight: 400,
+    fontWeight: 'bold',
 
     '&::after': {
       content: '',
@@ -89,8 +106,8 @@ export const Header = css({
       lineHeight: '$lineHeightMD',
     },
     '@md': {
-      fontSize: '$fontSizeMD',
-      lineHeight: '$lineHeightMD',
+      fontSize: '$fontSizeLG',
+      lineHeight: '$lineHeightLG',
     },
     '@lg': {
       fontSize: '$fontSizeLG',
@@ -102,19 +119,21 @@ export const Header = css({
 export const Title = css({
   textAlign: 'center',
   fontFamily: '$cinzelFont',
-  margin: '1rem 0',
 
   '@sm': {
     fontSize: '$fontSizeDefault',
     lineHeight: '$lineHeightDefault',
+    margin: '$spaceSM 0',
   },
   '@md': {
-    fontSize: '$fontSizeDefault',
-    lineHeight: '$lineHeightDefault',
+    fontSize: '$fontSizeMD',
+    lineHeight: '$lineHeightMD',
+    margin: '$spaceDefault 0',
   },
   '@lg': {
     fontSize: '$fontSizeMD',
     lineHeight: '$lineHeightMD',
+    margin: '$spaceDefault 0',
   },
 });
 
@@ -122,16 +141,6 @@ export const Paragraph = css({
   textAlign: 'center',
   fontFamily: '$poppinsFont',
 
-  '@sm': {
-    fontSize: '$fontSizeSM',
-    lineHeight: '$lineHeightSM',
-  },
-  '@md': {
-    fontSize: '$fontSizeSM',
-    lineHeight: '$lineHeightSM',
-  },
-  '@lg': {
-    fontSize: 'fontSizeDefault',
-    lineHeight: '$lineHeightDefault',
-  },
+  fontSize: '$fontSizeSM',
+  lineHeight: '$lineHeightSM',
 });

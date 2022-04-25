@@ -4,7 +4,6 @@ import { styled } from '../styles/stiches.config';
 import moment from 'moment';
 
 const Root = styled('section', CountDownCss.Root);
-const Header = styled('header', CountDownCss.Header);
 const Container = styled('div', CountDownCss.Container);
 const Wrapper = styled('div', CountDownCss.Wrapper);
 const TimeBox = styled('div', CountDownCss.TimeBox);
@@ -39,9 +38,6 @@ export function CountDown() {
   return (
     <Root>
       <Container>
-        <Header>
-          <h2>Faltam</h2>
-        </Header>
         <Wrapper>
           <TimeBox>
             <Date>{months.toString().length > 1 ? months : `0${months}`}</Date>
