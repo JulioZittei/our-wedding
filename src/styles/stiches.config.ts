@@ -131,10 +131,6 @@ const darkTheme = createTheme({
   },
 });
 
-type Color = {
-  [key: string]: object | undefined;
-};
-
 const globalStyles = globalCss({
   '*': {
     margin: 0,
