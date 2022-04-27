@@ -5,40 +5,55 @@ export const Root = css({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
+  pdy: '$space16',
+
+  textDecoration: 'none',
 });
 
-export const BoxName = css({
+export const ContentWrapper = css({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
 });
 
-export const FirstName = css({
-  fontSize: '$fontSizeMD',
-  lineHeight: '$lineHeightMD',
+export const Title = css({
   fontFamily: '$cinzelFont',
+  fontSize: '$fontSize24',
+  lineHeight: '$lineHeight28',
   textDecoration: 'none',
+
   '-webkit-text-fill-color': 'transparent',
-  background: 'linear-gradient(120deg, $tealA11, $greenA8)',
+  background: 'linear-gradient(120deg, $teal11, $green8)',
   backgroundClip: 'text',
 });
 
-export const LastName = css({
-  fontSize: '$fontSizeXS',
+export const SubTitle = css({
+  color: '$slate11',
   fontFamily: '$poppinsFont',
-  lineHeight: '$lineHeightXS',
+  fontSize: '$fontSize14',
+  lineHeight: '$lineHeight18',
   textDecoration: 'none',
-  color: '$slateA11',
+
+  variants: {
+    align: {
+      left: {
+        textAlign: 'left',
+      },
+      right: {
+        textAlign: 'right',
+      },
+    },
+  },
 });
 
 export const Separator = css({
-  fontSize: '$fontSizeDefault',
+  fontSize: '$fontSize16',
   fontFamily: '$cinzelFont',
   textDecoration: 'none',
-  color: '$slateA11',
+  color: '$slate11',
   border: `5px double`,
-  borderColor: '$slateA6',
+  borderColor: '$slate6',
   borderRadius: '50%',
-  margin: '0 $spaceSM',
-  padding: '.4rem .7rem',
+  margin: '0 $space8',
+  padding: '$space8 $space12',
 });

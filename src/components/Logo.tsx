@@ -1,37 +1,27 @@
 import { styled } from '../styles/stiches.config';
 import * as LogoCss from '../styles/components/LogoCss';
+import { Link } from './Link';
 
-const Root = styled('div', LogoCss.Root);
-const BoxName = styled('div', LogoCss.BoxName);
-const FirstName = styled('span', LogoCss.FirstName);
-const LastName = styled('span', LogoCss.LastName);
+const Root = styled(Link, LogoCss.Root);
+const ContentWrapper = styled('div', LogoCss.ContentWrapper);
+const Title = styled('span', LogoCss.Title);
+const Separator = styled('span', LogoCss.Separator);
+const SubTitle = styled('span', LogoCss.SubTitle);
 
 export function Logo() {
   return (
-    <Root>
-      <BoxName>
-        <FirstName>Élen</FirstName>
-        <LastName
-          css={{
-            textAlign: 'right',
-          }}
-        >
-          Sousa
-        </LastName>
-      </BoxName>
+    <Root href="/">
+      <ContentWrapper>
+        <Title>Élen</Title>
+        <SubTitle align="right">Sousa</SubTitle>
+      </ContentWrapper>
 
-      <div className={LogoCss.Separator()}>&</div>
+      <Separator>&</Separator>
 
-      <BoxName>
-        <FirstName>Julio</FirstName>
-        <LastName
-          css={{
-            textAlign: 'left',
-          }}
-        >
-          Zittei
-        </LastName>
-      </BoxName>
+      <ContentWrapper>
+        <Title>Julio</Title>
+        <SubTitle align="left">Zittei</SubTitle>
+      </ContentWrapper>
     </Root>
   );
 }
