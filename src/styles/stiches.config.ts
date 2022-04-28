@@ -60,6 +60,7 @@ const { css, globalCss, keyframes, theme, createTheme, getCssText, config, style
       fontSize18: '1.125rem', // 18px
       fontSize20: '1.25rem', // 20px
       fontSize24: '1.5rem', // 24px
+      fontSize32: '2rem', // 32px
       fontSize36: '2.25rem', // 36px
       fontSize40: '2.5rem', // 40px
       fontSize48: '3rem', // 48px
@@ -82,6 +83,7 @@ const { css, globalCss, keyframes, theme, createTheme, getCssText, config, style
       lineHeight22: '1.375rem', // 22px
       lineHeight24: '1.5rem', // 24px
       lineHeight28: '1.75rem', // 28px
+      lineHeight32: '2.25rem', // 36px
       lineHeight40: '2.5rem', // 40px
       lineHeight44: '2.75rem', // 44px
       lineHeight52: '3.25rem', // 52px
@@ -91,8 +93,9 @@ const { css, globalCss, keyframes, theme, createTheme, getCssText, config, style
     },
     media: {
       sm: '(max-width: 768px)',
-      md: '(max-width: 992px)',
-      lg: '(min-width: 993px)',
+      lg: '(min-width: 769px)',
+      // md: '(max-width: 992px)',
+      // lg: '(min-width: 993px)',
     },
     letterSpacings: {},
     sizes: {},
@@ -140,6 +143,12 @@ const globalStyles = globalCss({
 
   body: {
     backgroundColor: '$backgroundDefault',
+  },
+
+  'a, button': {
+    outlineWidth: 1,
+    outlineColor: `${teal.teal7}`,
+    '&:focus': { boxShadow: `0 0 0 2px ${teal.teal7}` },
   },
 });
 
