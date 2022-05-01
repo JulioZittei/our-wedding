@@ -9,7 +9,7 @@ const Container = styled('div', HeaderCss.Container);
 export function Header() {
   return (
     <Root>
-      <Container direction="row" alignItems="center" justifyContent="center">
+      <Container css={{ alignItems: 'center', justifyContent: 'center' }}>
         <Logo />
       </Container>
       <NavigationMenu />
