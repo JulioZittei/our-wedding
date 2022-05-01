@@ -6,12 +6,13 @@ interface LinkProps {
   href: string;
   target?: string;
   rel?: string;
+  tabIndex?: number | undefined;
 }
 
-export function Link({ href, target, rel, children, ...props }: LinkProps): JSX.Element {
+export function Link({ href, target, rel, tabIndex, children, ...props }: LinkProps): JSX.Element {
   return (
     <NextLink href={href} passHref>
-      <a target={target} rel={rel} {...props}>
+      <a target={target} rel={rel} tabIndex={tabIndex} {...props}>
         {children}
       </a>
     </NextLink>

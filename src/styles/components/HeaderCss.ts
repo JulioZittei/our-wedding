@@ -1,4 +1,5 @@
 import { css } from '../stiches.config';
+import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
   position: 'sticky',
@@ -7,13 +8,10 @@ export const Root = css({
   left: 0,
   right: 0,
   zIndex: 9999,
-  background: '$background',
-  boxShadow: `1px 1px 10px -5px #1a1d1e`,
-  borderBottom: '1px solid $slateA6',
+  backgroundColor: '$backgroundDefault',
 });
 
 export const Container = css({
-  maxWidth: 900,
-  margin: '0 auto',
-  padding: '$spaceDefault $spaceMD',
+  ...ContainerCss,
+  pdy: '$space24',
 });

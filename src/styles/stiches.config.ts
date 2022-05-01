@@ -91,12 +91,6 @@ const { css, globalCss, keyframes, theme, createTheme, getCssText, config, style
       lineHeight80: '5rem', // 80px
       lineHeight100: '6.25rem', // 100px
     },
-    media: {
-      sm: '(max-width: 768px)',
-      lg: '(min-width: 769px)',
-      // md: '(max-width: 992px)',
-      // lg: '(min-width: 993px)',
-    },
     letterSpacings: {},
     sizes: {},
     borderWidths: {},
@@ -115,6 +109,12 @@ const { css, globalCss, keyframes, theme, createTheme, getCssText, config, style
       paddingTop: value,
       paddingBottom: value,
     }),
+  },
+  media: {
+    sm: '(max-width: 768px)',
+    lg: '(min-width: 769px)',
+    // md: '(max-width: 992px)',
+    // lg: '(min-width: 993px)',
   },
 });
 
@@ -143,12 +143,6 @@ const globalStyles = globalCss({
 
   body: {
     backgroundColor: '$backgroundDefault',
-  },
-
-  'a, button': {
-    outlineWidth: 1,
-    outlineColor: `${teal.teal7}`,
-    '&:focus': { boxShadow: `0 0 0 2px ${teal.teal7}` },
   },
 });
 
