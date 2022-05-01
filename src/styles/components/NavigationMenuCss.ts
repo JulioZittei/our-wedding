@@ -1,9 +1,11 @@
 import { css } from '../stiches.config';
-import { slate } from '@radix-ui/colors';
 import { teal } from '@radix-ui/colors';
 import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
+  position: 'relative',
+  width: '100vw',
+  zIndex: 9999,
   borderBottom: '1px solid',
   borderTop: '1px solid',
   borderColor: '$slate6',
@@ -11,38 +13,30 @@ export const Root = css({
 
 export const Container = css({
   ...ContainerCss,
+  '& > div': {
+    width: '100%',
+  },
 });
 
 export const List = css({
   all: 'unset',
-  display: 'flex',
-  justifyContent: 'left',
   listStyle: 'none',
-});
+  pdy: '$space4',
 
-export const MobileList = css({
-  flex: 1,
-  display: 'block',
-  width: '100%',
-  listStyle: 'none',
-  overflowY: 'scroll',
-  pdy: '$space16',
+  '@sm': {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  '@lg': {
+    display: 'flex',
+    justifyContent: 'center',
+  },
 });
 
 export const Item = css({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  pdy: '$space4',
-});
-
-export const MobileItem = css({
-  width: '100%',
-  backgroundColor: 'transparent',
-
-  '&:focus': { boxShadow: `0 0 0 2px ${teal.teal7}` },
-  '&:hover': { backgroundColor: '$teal4' },
+  '&:not(:last-child)': {
+    marginRight: '$space8',
+  },
 });
 
 export const Link = css({
@@ -59,28 +53,13 @@ export const Link = css({
 
   outline: 'none',
   userSelect: 'none',
+  cursor: 'pointer',
   textDecoration: 'none',
+
+  transition: 'all .5s ease-in-out',
 
   '&:focus': { boxShadow: `0 0 0 2px ${teal.teal7}` },
   '&:hover': { backgroundColor: '$teal4' },
-});
-
-export const MobileLink = css({
-  display: 'block',
-  width: '100%',
-  padding: '$space8',
-  paddingLeft: '$space32',
-  backgroundColor: 'transparent',
-
-  color: '$teal11',
-  fontFamily: '$poppinsFont',
-  fontSize: '$fontSize15',
-  fontWeight: '$fontWeightNormal',
-  lineHeight: '$lineHeight19',
-
-  outline: 'none',
-  userSelect: 'none',
-  textDecoration: 'none',
 
   '&>svg': {
     marginRight: '$space8',
@@ -88,29 +67,26 @@ export const MobileLink = css({
 });
 
 export const Button = css({
-  display: 'flex',
-  flexDirection: 'column',
+  all: 'unset',
+  userSelect: 'none',
+  cursor: 'pointer',
+  fontFamily: 'inherit',
+  borderRadius: 4,
+  height: 35,
+  width: 35,
+  display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: '$space4',
-  borderRadius: 4,
-  border: 'none',
-  backgroundColor: 'transparent',
-  height: '100%',
-
   color: '$teal11',
-  fontFamily: '$poppinsFont',
-  fontSize: '$fontSize15',
-  fontWeight: '$fontWeightNormal',
-  lineHeight: '$lineHeight19',
 
-  outline: 'none',
-  userSelect: 'none',
+  transition: 'all .5s ease-in-out',
 
-  '&:focus': { position: 'relative', boxShadow: `0 0 0 2px ${teal.teal7}` },
   '&:hover': { backgroundColor: '$teal4' },
+  '&:focus': { boxShadow: `0 0 0 2px ${teal.teal7}` },
 
   '&>svg': {
     fontSize: '$fontSize24',
+    ':focus > &': {},
+    '[data-disabled] &': { color: '$slate8' },
   },
 });
