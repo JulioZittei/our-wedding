@@ -1,3 +1,4 @@
+import { teal } from '@radix-ui/colors';
 import { css } from '../stiches.config';
 
 export const Root = css({
@@ -5,9 +6,15 @@ export const Root = css({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
-  pdy: '$space16',
-
+  borderRadius: 4,
   textDecoration: 'none',
+
+  outline: 'none',
+  userSelect: 'none',
+  cursor: 'pointer',
+
+  transition: 'all .5s ease-in-out',
+  '&:focus': { boxShadow: `0 0 0 2px ${teal.teal7}` },
 });
 
 export const ContentWrapper = css({
