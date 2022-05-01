@@ -1,20 +1,14 @@
 import NextLink from 'next/link';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
-interface LinkProps {
-  children: ReactNode;
+interface LinkProps extends React.HTMLProps<HTMLAnchorElement> {
   href: string;
-  target?: string;
-  rel?: string;
-  tabIndex?: number | undefined;
 }
 
-export function Link({ href, target, rel, tabIndex, children, ...props }: LinkProps): JSX.Element {
+export function Link({ href, children, ...props }: LinkProps): JSX.Element {
   return (
     <NextLink href={href} passHref>
-      <a target={target} rel={rel} tabIndex={tabIndex} {...props}>
-        {children}
-      </a>
+      <a {...props}>{children}</a>
     </NextLink>
   );
 }
