@@ -1,5 +1,4 @@
 import { css } from '../stiches.config';
-import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
   position: 'relative',
@@ -23,11 +22,6 @@ export const Content = css({
   position: 'absolute',
   width: '100%',
   height: '100%',
-
-  // display: 'flex',
-  // flexDirection: 'row',
-  // justifyContent: 'right',
-  // alignItems: 'center',
 });
 
 export const Container = css({
