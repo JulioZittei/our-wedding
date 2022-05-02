@@ -72,7 +72,7 @@ export const Wrapper = css({
   '@sm': {
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     gap: '$space8',
   },
   '@lg': {

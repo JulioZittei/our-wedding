@@ -31,7 +31,7 @@ export function SaveTheDate() {
 
         <Content>
           <Title>
-            <time dateTime="2022-11-26 17:30:00">26 de Novembro de 2022 às 15h30</time>
+            <time dateTime="2022-11-26 15:30:00">26 de Novembro de 2022 às 15h30</time>
           </Title>
           <SubTitle>- Convidamos você para celebrar este grande momento conosco -</SubTitle>
 
@@ -46,14 +46,16 @@ export function SaveTheDate() {
           <ContentWrapper>
             <Card>
               {!matchedWidthMobile && (
-                <Image
-                  src={AddToAgenda}
-                  width={120}
-                  height={120}
-                  objectFit="cover"
-                  placeholder="blur"
-                  alt="QR Code para adicionar o evento ao calendário do seu dispositivo"
-                />
+                <div style={{ padding: '2px 2px 0 2px', background: '#fff' }}>
+                  <Image
+                    src={AddToAgenda}
+                    width={120}
+                    height={120}
+                    objectFit="fill"
+                    placeholder="blur"
+                    alt="QR Code para adicionar o evento ao calendário do seu dispositivo"
+                  />
+                </div>
               )}
               <LinkButton
                 href="https://drive.google.com/uc?export=download&id=10Fk60pY2uETT6-sIskrQyok7KgyJsU6L"
@@ -66,14 +68,16 @@ export function SaveTheDate() {
 
             <Card>
               {!matchedWidthMobile && (
-                <Image
-                  src={AddToGoogleAgenda}
-                  width={120}
-                  height={120}
-                  objectFit="cover"
-                  placeholder="blur"
-                  alt="QR Code para adicionar o evento ao Google Agenda"
-                />
+                <div style={{ padding: '2px 2px 0 2px', background: '#fff' }}>
+                  <Image
+                    src={AddToGoogleAgenda}
+                    width={120}
+                    height={120}
+                    objectFit="fill"
+                    placeholder="blur"
+                    alt="QR Code para adicionar o evento ao Google Agenda"
+                  />
+                </div>
               )}
               <LinkButton
                 href="https://calendar.google.com/event?action=TEMPLATE&tmeid=Xzg1MGo0YzlrNm9zNDRiOW82NTBqNmI5azZsMjRjYjlvNjhzMzRiYTM4OTEzY2NpNDg0cmthZGE1ODgganVsaW8ueml0dGVpOTZAbQ&tmsrc=julio.zittei96%40gmail.com"
