@@ -1,39 +1,32 @@
 import { css } from '../stiches.config';
-import { tealA } from '@radix-ui/colors';
-import { slateA } from '@radix-ui/colors';
+import { teal } from '@radix-ui/colors';
+import { slate } from '@radix-ui/colors';
+import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
   background: '$background',
 });
 
 export const Container = css({
-  maxWidth: 900,
-  margin: '0 auto',
-  padding: '2rem .5rem',
-  display: 'flex',
+  ...ContainerCss,
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-between',
+
   '@sm': {
-    padding: '$spaceMD $spaceMD',
-  },
-  '@md': {
-    padding: '$spaceXL $spaceMD',
+    pdy: '$space24',
   },
   '@lg': {
-    padding: '$spaceXL $spaceMD',
+    pdy: '$space64',
   },
 });
 
 export const Header = css({
   '@sm': {
-    marginBottom: '$spaceDefault',
-  },
-  '@md': {
-    marginBottom: '$spaceLG',
+    marginBottom: '$space16',
   },
   '@lg': {
-    marginBottom: '$spaceLG',
+    marginBottom: '$space32',
   },
   '&>h2': {
     position: 'relative',
@@ -51,20 +44,16 @@ export const Header = css({
       height: 4,
       borderTopLeftRadius: 4,
       borderTopRightRadius: 4,
-      background: 'linear-gradient(120deg, $tealA11, $greenA8)',
+      background: 'linear-gradient(120deg, $teal11, $green8)',
     },
 
     '@sm': {
-      fontSize: '$fontSizeMD',
-      lineHeight: '$lineHeightMD',
-    },
-    '@md': {
-      fontSize: '$fontSizeLG',
-      lineHeight: '$lineHeightLG',
+      fontSize: '$fontSize18',
+      lineHeight: '$lineHeight22',
     },
     '@lg': {
-      fontSize: '$fontSizeLG',
-      lineHeight: '$lineHeightLG',
+      fontSize: '$fontSize24',
+      lineHeight: '$lineHeight28',
     },
   },
 });
@@ -85,13 +74,12 @@ export const Wrapper = css({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    gap: '$spaceDefault',
+    gap: '$space8',
   },
-  '@md': {
+  '@lg': {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '$spaceLG',
   },
 });
 
@@ -100,28 +88,25 @@ export const Title = css({
     textAlign: 'center',
     textTransform: 'uppercase',
     fontFamily: '$poppinsFont',
-    color: '$tealA11',
+    color: '$teal11',
     lineHeight: '2rem',
 
     '@sm': {
-      fontSize: '$fontSizeDefault',
-    },
-    '@md': {
-      fontSize: '$fontSizeMD',
+      fontSize: '$fontSize16',
     },
     '@lg': {
-      fontSize: '$fontSizeMD',
+      fontSize: '$fontSize18',
     },
   },
 });
 
 export const SubTitle = css({
-  color: '$slateA11',
+  color: '$slate11',
   fontFamily: '$poppinsFont',
   textAlign: 'center',
-  fontSize: '$fontSizeXS',
-  lineHeight: '$lineHeightXS',
-  marginBottom: '$spaceDefault',
+  fontSize: '$fontSize12',
+  lineHeight: '$lineHeight16',
+  marginBottom: '$space16',
 });
 
 export const Card = css({
@@ -129,44 +114,48 @@ export const Card = css({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-between',
+
+  '@sm': {
+    padding: '$space8',
+  },
+  '@lg': {
+    padding: '$space16',
+  },
 });
 
 export const LinkButton = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-evenly',
-  background: '$tealA9',
-  padding: '.75rem $spaceDefault',
+  background: '$teal5',
+  padding: '.75rem $space16',
   borderRadius: 4,
-  border: `1px solid ${tealA.tealA6}`,
+  border: `1px solid transparent`,
 
-  color: '#fff',
+  color: '$teal11',
   fontFamily: '$poppinsFont',
   textDecoration: 'none',
-  fontSize: '$fontSizeSM',
-  lineHeight: '$lineHeightSM',
-  boxShadow: `0 0 0 2px ${slateA.slateA7}`,
+  fontSize: '$fontSize14',
+  lineHeight: '$lineHeight18',
+  // boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
 
-  transition: 'All .2s ease-in-out',
+  transition: 'All .5s ease-in-out',
 
   '&>svg': {
     marginRight: '.75rem',
-    fontSize: '$fontSizeDefault',
-    lineHeight: '$lineHeightDefault',
+    fontSize: '$fontSize16',
+    lineHeight: '$lineHeight20',
   },
 
   '&:hover': {
-    background: '$tealA10',
-    border: `1px solid ${tealA.tealA7}`,
+    background: '$teal6',
+    border: `1px solid $teal7`,
   },
 
   '@sm': {
-    marginTop: '$spaceXS',
-  },
-  '@md': {
-    marginTop: '$spaceSM',
+    marginTop: '$space4',
   },
   '@lg': {
-    marginTop: '$spaceSM',
+    marginTop: '$space8',
   },
 });
