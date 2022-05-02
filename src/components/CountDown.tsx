@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import * as CountDownCss from '../styles/components/CountDown';
+import * as CountDownCss from '../styles/components/CountDownCss';
 import { styled } from '../styles/stiches.config';
 import moment from 'moment';
 
