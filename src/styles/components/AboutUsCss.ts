@@ -105,16 +105,12 @@ export const Header = css({
     },
 
     '@sm': {
-      fontSize: '$fontSizeMD',
-      lineHeight: '$lineHeightMD',
-    },
-    '@md': {
-      fontSize: '$fontSizeLG',
-      lineHeight: '$lineHeightLG',
+      fontSize: '$fontSize18',
+      lineHeight: '$lineHeight22',
     },
     '@lg': {
-      fontSize: '$fontSizeLG',
-      lineHeight: '$lineHeightLG',
+      fontSize: '$fontSize24',
+      lineHeight: '$lineHeight28',
     },
   },
 });
