@@ -45,10 +45,10 @@ export const Header = css({
   flexDirection: 'column',
   justifyContent: 'center',
   textAlign: 'center',
-  backgroundColor: '$pink5',
+  backgroundColor: '$teal5',
   borderRadius: 4,
   padding: '$space8',
-  opacity: 0.9,
+  opacity: 1,
 });
 
 export const Title = css({
