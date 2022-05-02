@@ -1,6 +1,5 @@
-import { css } from '../stiches.config';
 import { teal } from '@radix-ui/colors';
-import { slate } from '@radix-ui/colors';
+import { css } from '../stiches.config';
 import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
@@ -137,16 +136,14 @@ export const LinkButton = css({
   textDecoration: 'none',
   fontSize: '$fontSize14',
   lineHeight: '$lineHeight18',
-  // boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
 
-  transition: 'All .5s ease-in-out',
+  outline: 'none',
+  userSelect: 'none',
+  cursor: 'pointer',
 
-  '&>svg': {
-    marginRight: '.75rem',
-    fontSize: '$fontSize16',
-    lineHeight: '$lineHeight20',
-  },
+  transition: 'all .5s ease-in-out',
 
+  '&:focus': { boxShadow: `0 0 0 2px ${teal.teal7}` },
   '&:hover': {
     background: '$teal6',
     border: `1px solid $teal7`,
@@ -157,5 +154,11 @@ export const LinkButton = css({
   },
   '@lg': {
     marginTop: '$space8',
+  },
+
+  '&>svg': {
+    marginRight: '.75rem',
+    fontSize: '$fontSize16',
+    lineHeight: '$lineHeight20',
   },
 });
