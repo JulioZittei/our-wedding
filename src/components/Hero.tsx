@@ -1,35 +1,41 @@
 import Image from 'next/image';
-import HeroImage from '../../public/images/noivos-hero.jpeg';
+import HeroImage from '../../public/images/wedding.svg';
 import * as HeroCss from '../styles/components/HeroCss';
 import { styled } from '../styles/stiches.config';
-import { GiVineFlower } from 'react-icons/gi';
 
-const Root = styled('section', HeroCss.Root);
+const Figure = styled('figure', HeroCss.Root);
 const SimpleImage = styled(Image, HeroCss.Image);
-const Content = styled('div', HeroCss.Content);
+const Content = styled('figcaption', HeroCss.Content);
+const Container = styled('div', HeroCss.Container);
 const Header = styled('header', HeroCss.Header);
 const Title = styled('h1', HeroCss.Title);
+const SubTitle = styled('h2', HeroCss.SubTitle);
 
 export function Hero() {
   return (
-    <Root>
-      <SimpleImage
-        src={HeroImage}
-        layout="intrinsic"
-        width={1920}
-        height={1080}
-        objectFit="cover"
-        priority
-        placeholder="blur"
-        alt="Élen e Julio estão se beijando sentados num banco de parque em formato octagonal, no centro do octagono, atrás do casal tem uma árvore e flores vermelhas. Ao fundo algumas pequenas mesas de restaurante."
-      />
-      <Content>
-        <Header>
-          <Title>
-            <GiVineFlower /> Élen & Julio <GiVineFlower />
-          </Title>
-        </Header>
-      </Content>
-    </Root>
+    <section>
+      <Figure>
+        <SimpleImage
+          src={HeroImage}
+          layout="intrinsic"
+          width={1920}
+          height={1080}
+          objectFit="cover"
+          priority
+          alt="Ilustração de um noivo e sua noiva se abrançando com fogos de artificio ao fundo. O noivo está de smoking preto e a noiva de vestido branco segurando um ramo de flores com petalas verdes"
+        />
+
+        <Content>
+          <Container>
+            <Header>
+              <Title>
+                Bem-vindo <br /> <strong>ao nosso site</strong>
+              </Title>
+              <SubTitle>www.elenejulio.com</SubTitle>
+            </Header>
+          </Container>
+        </Content>
+      </Figure>
+    </section>
   );
 }

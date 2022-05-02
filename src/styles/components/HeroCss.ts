@@ -1,15 +1,12 @@
 import { css } from '../stiches.config';
-import { slateA } from '@radix-ui/colors';
+import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
   position: 'relative',
   display: 'flex',
+  justifyContent: 'center',
 
   '@sm': {
-    aspectRatio: 1.75,
-  },
-
-  '@md': {
     aspectRatio: 1.75,
   },
 
@@ -20,68 +17,72 @@ export const Root = css({
 
 export const Image = css({
   width: '100%',
-  filter: 'blur(.125rem)',
 });
 
 export const Content = css({
   position: 'absolute',
   width: '100%',
-  top: 0,
-  bottom: 0,
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
+  height: '100%',
+
+  // display: 'flex',
+  // flexDirection: 'row',
+  // justifyContent: 'right',
+  // alignItems: 'center',
+});
+
+export const Container = css({
+  position: 'relative',
+  display: 'grid',
+  gridTemplateColumns: ' 1fr 1fr',
   alignItems: 'center',
+  width: '100%',
+  margin: '0 auto',
+  pdx: '$space24',
+  pdy: '$space24',
+  height: '100%',
+  maxWidth: 992,
 });
 
 export const Header = css({
+  userSelect: 'none',
+  gridColumn: 2,
   position: 'relative',
-  maxWidth: '900px',
-  margin: '0 auto',
   display: 'flex',
-  border: '10px double #fff',
-  borderRadius: '4px',
-  opacity: 0.8,
   flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center',
-
-  '@sm': {
-    padding: '$spaceSM $spaceDefault',
-  },
-  '@md': {
-    padding: '$spaceDefault $spaceLG',
-  },
-  '@lg': {
-    padding: '$spaceLG $spaceXL',
-  },
+  textAlign: 'center',
+  backgroundColor: '$pink5',
+  borderRadius: 4,
+  padding: '$space8',
+  opacity: 0.9,
 });
 
 export const Title = css({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  textAlign: 'center',
-  fontFamily: '$cinzelFont',
-  color: '#fff',
-
-  '&>svg:first-child': {
-    marginRight: '$spaceDefault',
-  },
-  '&>svg:last-child': {
-    marginLeft: '$spaceDefault',
-  },
+  fontFamily: '$poppinsFont',
+  fontWeight: '$fontWeightNormal',
+  color: '$teal11',
 
   '@sm': {
-    fontSize: '$fontSizeLG',
-    lineHeight: '$lineHeightXL',
-  },
-  '@md': {
-    fontSize: '$fontSizeXL',
-    lineHeight: '$lineHeight2XL',
+    fontSize: '$fontSize24',
+    lineHeight: '$lineHeight28',
   },
   '@lg': {
-    fontSize: '$fontSizeXL',
-    lineHeight: '$lineHeight2XL',
+    fontSize: '$fontSize48',
+    lineHeight: '$lineHeight52',
+  },
+});
+
+export const SubTitle = css({
+  fontFamily: '$poppinsFont',
+  fontWeight: '$fontWeightNormal',
+  color: '$slate12',
+
+  '@sm': {
+    fontSize: '$fontSize18',
+    lineHeight: '$lineHeight22',
+  },
+  '@lg': {
+    fontSize: '$fontSize40',
+    lineHeight: '$lineHeight44',
   },
 });
