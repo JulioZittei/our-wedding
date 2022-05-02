@@ -3,12 +3,13 @@ import Image from 'next/image';
 import ElenImage from '../../public/images/elen.jpg';
 import JulioImage from '../../public/images/julio.jpg';
 import { styled } from '../styles/stiches.config';
+import { Link } from './Link';
 
 const Root = styled('section', AboutUsCss.Root);
 const Container = styled('div', AboutUsCss.Container);
 const Content = styled('div', AboutUsCss.Content);
 const ContentBox = styled('div', AboutUsCss.Box);
-const ImageCircle = styled('a', AboutUsCss.ImageCircle);
+const ImageCircle = styled(Link, AboutUsCss.ImageCircle);
 const ImageLayer = styled('div', AboutUsCss.ImageLayer);
 const SimpleImage = styled(Image, AboutUsCss.Image);
 const Header = styled('header', AboutUsCss.Header);
@@ -25,9 +26,16 @@ export function AboutUs() {
         </Header>
         <Content>
           <ContentBox>
-            <ImageCircle href="/">
+            <ImageCircle href="https://www.instagram.com/elensousasz/" target="_blank" rel="noopener noreferrer">
               <ImageLayer>
-                <SimpleImage width={80} height={80} layout="intrinsic" src={ElenImage} placeholder="blur" />
+                <SimpleImage
+                  width={80}
+                  height={80}
+                  layout="intrinsic"
+                  src={ElenImage}
+                  placeholder="blur"
+                  alt="Foto da Élen sorrindo com a cabeça levemente inclinada para direita. Ela está vestida de rosa"
+                />
               </ImageLayer>
             </ImageCircle>
 
@@ -44,9 +52,15 @@ export function AboutUs() {
           <SimpleImage width={100} height={100} layout="intrinsic" src="/images/wedding-ring.png" />
 
           <ContentBox>
-            <ImageCircle href="/">
+            <ImageCircle href="https://www.instagram.com/juliozittei/" target="_blank" rel="noopener noreferrer">
               <ImageLayer>
-                <SimpleImage width={80} height={80} layout="intrinsic" src={JulioImage} />
+                <SimpleImage
+                  width={80}
+                  height={80}
+                  layout="intrinsic"
+                  src={JulioImage}
+                  alt="Foto do Julio sorrindo com a cabeça inclinada para esquerda. Ele está de óculos e blazer marrom"
+                />
               </ImageLayer>
             </ImageCircle>
 

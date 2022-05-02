@@ -1,24 +1,21 @@
+import { teal } from '@radix-ui/colors';
 import { css } from '../stiches.config';
+import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
   background: '$background',
 });
 
 export const Container = css({
-  maxWidth: 900,
-  margin: '0 auto',
-  display: 'flex',
+  ...ContainerCss,
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   '@sm': {
-    padding: '$spaceMD $spaceMD',
-  },
-  '@md': {
-    padding: '$spaceXL $spaceMD',
+    pdy: '$space24',
   },
   '@lg': {
-    padding: '$spaceXL $spaceMD',
+    pdy: '$space64',
   },
 });
 
@@ -32,7 +29,7 @@ export const Content = css({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  '@md': {
+  '@lg': {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-start',
@@ -55,17 +52,24 @@ export const Wrapper = css({
 });
 
 export const ImageCircle = css({
-  padding: '$spaceXS',
-  background: 'linear-gradient(120deg, $tealA11, $greenA8)',
+  padding: '$space4',
+  background: 'linear-gradient(120deg, $teal11, $green8)',
   borderRadius: '100%',
+
+  outline: 'none',
+  userSelect: 'none',
+  cursor: 'pointer',
+
+  transition: 'all .5s ease-in-out',
+  '&:focus': { boxShadow: `0 0 0 2px ${teal.teal7}` },
 });
 
 export const ImageLayer = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '$spaceXS',
-  background: '$background',
+  padding: '$space4',
+  background: '$backgroundDefault',
   borderRadius: '100%',
 });
 
@@ -75,13 +79,10 @@ export const Image = css({
 
 export const Header = css({
   '@sm': {
-    marginBottom: '$spaceDefault',
-  },
-  '@md': {
-    marginBottom: '$spaceLG',
+    marginBottom: '$space16',
   },
   '@lg': {
-    marginBottom: '$spaceLG',
+    marginBottom: '$space32',
   },
 
   '&>h2': {
@@ -100,7 +101,7 @@ export const Header = css({
       height: 4,
       borderTopLeftRadius: 4,
       borderTopRightRadius: 4,
-      background: 'linear-gradient(120deg, $tealA11, $greenA8)',
+      background: 'linear-gradient(120deg, $teal11, $green8)',
     },
 
     '@sm': {
@@ -120,22 +121,18 @@ export const Header = css({
 
 export const Title = css({
   textAlign: 'center',
-  fontFamily: '$cinzelFont',
+  fontFamily: '$poppinsFont',
+  color: '$teal11',
 
   '@sm': {
-    fontSize: '$fontSizeDefault',
-    lineHeight: '$lineHeightDefault',
-    margin: '$spaceSM 0',
-  },
-  '@md': {
-    fontSize: '$fontSizeMD',
-    lineHeight: '$lineHeightMD',
-    margin: '$spaceDefault 0',
+    fontSize: '$fontSize16',
+    lineHeight: '$lineHeight20',
+    margin: '$space8 0',
   },
   '@lg': {
-    fontSize: '$fontSizeMD',
-    lineHeight: '$lineHeightMD',
-    margin: '$spaceDefault 0',
+    fontSize: '$fontSize18',
+    lineHeight: '$lineHeigh22',
+    margin: '$space8 0',
   },
 });
 
@@ -143,6 +140,12 @@ export const Paragraph = css({
   textAlign: 'center',
   fontFamily: '$poppinsFont',
 
-  fontSize: '$fontSizeSM',
-  lineHeight: '$lineHeightSM',
+  '@sm': {
+    fontSize: '$fontSize14',
+    lineHeight: '$lineHeight18',
+  },
+  '@lg': {
+    fontSize: '$fontSize15',
+    lineHeight: '$lineHeight19',
+  },
 });
