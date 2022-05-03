@@ -42,7 +42,7 @@ export const TimeBox = css({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'stretch',
-  background: '$backgroundDefault',
+  background: '$slate3',
   borderRadius: 4,
   boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
 
