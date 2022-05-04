@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import { darkTheme, globalStyles } from '../styles/stiches.config';
 import { ThemeProvider } from 'next-themes';
+import '../libs/polyfill';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
