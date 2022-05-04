@@ -140,7 +140,10 @@ const globalStyles = globalCss({
     padding: 0,
     boxSizing: 'border-box',
   },
-
+  html: {
+    scrollBehavior: 'smooth',
+    scrollPaddingTop: 141,
+  },
   body: {
     backgroundColor: '$backgroundDefault',
   },

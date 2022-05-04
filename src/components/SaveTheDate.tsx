@@ -23,7 +23,7 @@ export function SaveTheDate() {
   const matchedWidthMobile = useMatchMedia('max-width: 768px');
 
   return (
-    <Root>
+    <Root id="save-the-date">
       <Container>
         <Header>
           <h2>Save The Date</h2>

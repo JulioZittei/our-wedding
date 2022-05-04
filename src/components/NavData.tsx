@@ -19,4 +19,9 @@ export const NavData = [
     path: '#save-the-date',
     icon: <IoIcons.IoCalendar />,
   },
+  {
+    title: 'Presentes',
+    path: '#gifts',
+    icon: <FaIcons.FaGift />,
+  },
 ];

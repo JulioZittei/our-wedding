@@ -13,7 +13,7 @@ const SubTitle = styled('h2', HeroCss.SubTitle);
 
 export function Hero() {
   return (
-    <section>
+    <section id="home">
       <Figure>
         <SimpleImage
           src={HeroImage}

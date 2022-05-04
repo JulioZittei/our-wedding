@@ -19,7 +19,7 @@ const Paragraph = styled('p', AboutUsCss.Paragraph);
 
 export function AboutUs() {
   return (
-    <Root>
+    <Root id="about-us">
       <Container>
         <Header>
           <h2>Sobre nós</h2>

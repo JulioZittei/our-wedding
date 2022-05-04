@@ -41,7 +41,7 @@ export function Gifts({ pixCode }: GiftsProps) {
   };
 
   return (
-    <Root>
+    <Root id="gifts">
       <Container>
         <Header>
           <h2>Presentes</h2>
