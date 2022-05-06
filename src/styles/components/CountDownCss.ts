@@ -74,7 +74,7 @@ export const Date = css({
 export const Label = css({
   flex: 1,
   width: '100%',
-  color: '$teal8',
+  color: '$pink8',
   textAlign: 'center',
   fontFamily: '$poppinsFont',
 
