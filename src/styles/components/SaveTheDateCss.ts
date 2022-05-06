@@ -73,12 +73,15 @@ export const Wrapper = css({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '$space8',
+    gap: '$space12',
+    marginTop: '$space16',
   },
   '@lg': {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    gap: '$space16',
+    marginTop: '$space32',
   },
 });
 
@@ -100,11 +103,10 @@ export const Title = css({
 });
 
 export const SubTitle = css({
-  color: '$slate11',
   fontFamily: '$poppinsFont',
   textAlign: 'center',
-  fontSize: '$fontSize12',
-  lineHeight: '$lineHeight16',
+  fontSize: '$fontSize14',
+  lineHeight: '$lineHeight18',
   marginBottom: '$space16',
 });
 
@@ -114,9 +116,6 @@ export const Card = css({
   alignItems: 'center',
   justifyContent: 'space-between',
 
-  '@sm': {
-    padding: '$space8',
-  },
   '@lg': {
     padding: '$space16',
   },

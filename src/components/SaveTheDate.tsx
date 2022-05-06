@@ -1,13 +1,13 @@
 import AddToAgenda from '../../public/images/add-to-agenda.jpeg';
 import AddToGoogleAgenda from '../../public/images/add-to-google-agenda.jpeg';
 import DrawImage from '../../public/images/save-the-date.svg';
-import * as SaveTheDateCss from '../styles/components/SaveTheDateCss';
+import useMatchMedia from '../hooks/useMatchMedia';
+import Image from 'next/image';
 import { styled } from '../styles/stiches.config';
 import { FcGoogle } from 'react-icons/fc';
 import { FcCalendar } from 'react-icons/fc';
-import Image from 'next/image';
 import { Link } from './Link';
-import useMatchMedia from '../hooks/useMatchMedia';
+import * as SaveTheDateCss from '../styles/components/SaveTheDateCss';
 
 const Root = styled('section', SaveTheDateCss.Root);
 const Container = styled('div', SaveTheDateCss.Container);
@@ -15,7 +15,7 @@ const Header = styled('header', SaveTheDateCss.Header);
 const Content = styled('div', SaveTheDateCss.Content);
 const ContentWrapper = styled('div', SaveTheDateCss.Wrapper);
 const Title = styled('h3', SaveTheDateCss.Title);
-const SubTitle = styled('small', SaveTheDateCss.SubTitle);
+const SubTitle = styled('p', SaveTheDateCss.SubTitle);
 const Card = styled('div', SaveTheDateCss.Card);
 const LinkButton = styled(Link, SaveTheDateCss.LinkButton);
 
