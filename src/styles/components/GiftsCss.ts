@@ -4,7 +4,7 @@ import { slateA } from '@radix-ui/colors';
 import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
-  background: '$teal5',
+  background: '$backgroundDefault',
 });
 
 export const Container = css({
@@ -73,14 +73,14 @@ export const Wrapper = css({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    gap: '$space16',
+    gap: '$space12',
     marginTop: '$space16',
   },
   '@lg': {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '$space32',
+    gap: '$space16',
     marginTop: '$space32',
   },
 });
@@ -114,9 +114,10 @@ export const Card = css({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-between',
-  background: '$slate3',
-  boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
-  borderRadius: 4,
+  // background: '$slate3',
+  // boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
+  // borderRadius: 4,
+  // padding: '$space16',
   maxWidth: 200,
   width: '100%',
 
@@ -125,7 +126,9 @@ export const Card = css({
     color: '$teal11',
   },
 
-  padding: '$space16',
+  '@lg': {
+    padding: '$space16',
+  },
 });
 
 export const LinkButton = css({
