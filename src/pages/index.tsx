@@ -5,6 +5,8 @@ import { AboutUs } from '../components/AboutUs';
 import { CountDown } from '../components/CountDown';
 import { SaveTheDate } from '../components/SaveTheDate';
 import { Gifts } from '../components/Gifts';
+import { Location } from '../components/Location';
+
 import Head from 'next/head';
 
 interface HomeProps {
@@ -23,6 +25,7 @@ export default function Home({ pixCode }: HomeProps): JSX.Element {
         <AboutUs />
         <CountDown />
         <SaveTheDate />
+        <Location />
         <Gifts pixCode={pixCode} />
       </main>
     </>

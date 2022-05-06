@@ -20,6 +20,11 @@ export const NavData = [
     icon: <IoIcons.IoCalendar />,
   },
   {
+    title: 'Localização',
+    path: '#location',
+    icon: <IoIcons.IoLocationSharp />,
+  },
+  {
     title: 'Presentes',
     path: '#gifts',
     icon: <FaIcons.FaGift />,
