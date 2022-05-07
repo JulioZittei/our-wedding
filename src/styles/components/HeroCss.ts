@@ -69,7 +69,7 @@ export const Title = css({
 export const SubTitle = css({
   fontFamily: '$poppinsFont',
   fontWeight: '$fontWeightNormal',
-  color: '$slate12',
+  color: '$mauve12',
 
   '@sm': {
     fontSize: '$fontSize18',

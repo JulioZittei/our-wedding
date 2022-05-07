@@ -35,7 +35,7 @@ export const Title = css({
 });
 
 export const SubTitle = css({
-  color: '$slate11',
+  color: '$mauve11',
   fontFamily: '$poppinsFont',
   fontSize: '$fontSize14',
   lineHeight: '$lineHeight18',
@@ -57,9 +57,9 @@ export const Separator = css({
   fontSize: '$fontSize16',
   fontFamily: '$cinzelFont',
   textDecoration: 'none',
-  color: '$slate11',
+  color: '$mauve11',
   border: `5px double`,
-  borderColor: '$slate6',
+  borderColor: '$mauve6',
   borderRadius: '50%',
   margin: '0 $space8',
   padding: '$space8 $space12',

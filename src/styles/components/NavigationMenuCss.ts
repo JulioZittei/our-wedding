@@ -8,7 +8,7 @@ export const Root = css({
   zIndex: 9999,
   borderBottom: '1px solid',
   borderTop: '1px solid',
-  borderColor: '$slate6',
+  borderColor: '$mauve6',
 });
 
 export const Container = css({
@@ -87,6 +87,6 @@ export const Button = css({
   '&>svg': {
     fontSize: '$fontSize24',
     ':focus > &': {},
-    '[data-disabled] &': { color: '$slate8' },
+    '[data-disabled] &': { color: '$mauve8' },
   },
 });

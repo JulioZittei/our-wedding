@@ -3,7 +3,7 @@ import { css } from '../stiches.config';
 import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
-  background: '$background',
+  background: '$backgroundDefault',
 });
 
 export const Container = css({
@@ -103,6 +103,7 @@ export const Title = css({
 });
 
 export const SubTitle = css({
+  color: '$mauve12',
   fontFamily: '$poppinsFont',
   textAlign: 'center',
   fontSize: '$fontSize14',
@@ -125,7 +126,7 @@ export const LinkButton = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-evenly',
-  background: '$teal5',
+  background: '$teal3',
   padding: '.75rem $space16',
   borderRadius: 4,
   border: `1px solid transparent`,
@@ -145,7 +146,6 @@ export const LinkButton = css({
   '&:focus': { boxShadow: `0 0 0 2px ${teal.teal7}` },
   '&:hover': {
     background: '$teal6',
-    border: `1px solid $teal7`,
   },
 
   '@sm': {

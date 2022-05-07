@@ -2,7 +2,7 @@ import { css } from '../stiches.config';
 import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
-  background: '$teal5',
+  background: '$teal2',
 });
 
 export const Container = css({
@@ -42,7 +42,7 @@ export const TimeBox = css({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'stretch',
-  background: '$slate3',
+  background: '$mauve1',
   borderRadius: 4,
   boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
 
@@ -74,7 +74,7 @@ export const Date = css({
 export const Label = css({
   flex: 1,
   width: '100%',
-  color: '$pink8',
+  color: '$pink11',
   textAlign: 'center',
   fontFamily: '$poppinsFont',
 

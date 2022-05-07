@@ -1,6 +1,5 @@
 import { css } from '../stiches.config';
 import { teal } from '@radix-ui/colors';
-import { slateA } from '@radix-ui/colors';
 import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
@@ -114,10 +113,6 @@ export const Card = css({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-between',
-  // background: '$slate3',
-  // boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
-  // borderRadius: 4,
-  // padding: '$space16',
   maxWidth: 200,
   width: '100%',
 
@@ -136,7 +131,7 @@ export const LinkButton = css({
   width: '100%',
   alignItems: 'center',
   justifyContent: 'center',
-  background: '$teal5',
+  background: '$teal3',
   padding: '.75rem $space16',
   borderRadius: 4,
   border: `1px solid transparent`,
@@ -156,8 +151,7 @@ export const LinkButton = css({
 
   '&:focus': { boxShadow: `0 0 0 2px ${teal.teal7}` },
   '&:hover': {
-    background: '$teal6',
-    border: `1px solid $teal7`,
+    background: '$teal4',
   },
 
   '&>svg': {

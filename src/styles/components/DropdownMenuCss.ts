@@ -30,7 +30,7 @@ export const Trigger = css({
 export const Content = css({
   minWidth: 220,
   width: '100%',
-  backgroundColor: '$slate3',
+  backgroundColor: '$mauve3',
   borderRadius: 4,
   padding: '$space8',
   boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
@@ -65,7 +65,7 @@ const itemStyles = {
   userSelect: 'none',
 
   '&[data-disabled]': {
-    color: '$slate8',
+    color: '$mauve8',
     pointerEvents: 'none',
   },
 
@@ -77,7 +77,7 @@ const itemStyles = {
   '&>svg': {
     marginRight: '$space8',
     ':focus > &': {},
-    '[data-disabled] &': { color: '$slate8' },
+    '[data-disabled] &': { color: '$mauve8' },
   },
 };
 
@@ -113,11 +113,11 @@ export const Button = css({
   '&>svg': {
     fontSize: '$fontSize24',
     ':focus > &': {},
-    '[data-disabled] &': { color: '$slate8' },
+    '[data-disabled] &': { color: '$mauve8' },
   },
 });
 
 export const Arrow = css({
-  fill: '$slate3',
+  fill: '$mauve3',
   boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
 });
