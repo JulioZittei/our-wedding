@@ -7,7 +7,6 @@ export const Root = css({
 
 export const Container = css({
   ...ContainerCss,
-  pdy: '$space64',
   '&>span': {
     color: '$teal11',
     fontFamily: '$poppinsFont',
@@ -16,5 +15,11 @@ export const Container = css({
       color: '$pink11',
       textDecoration: 'none',
     },
+  },
+  '@sm': {
+    pdy: '$space24',
+  },
+  '@lg': {
+    pdy: '$space64',
   },
 });
