@@ -8,6 +8,7 @@ import { Gifts } from '../components/Gifts';
 import { Location } from '../components/Location';
 
 import Head from 'next/head';
+import { Footer } from '../components/Footer';
 
 interface HomeProps {
   pixCode: string;
@@ -28,6 +29,7 @@ export default function Home({ pixCode }: HomeProps): JSX.Element {
         <Location />
         <Gifts pixCode={pixCode} />
       </main>
+      <Footer />
     </>
   );
 }
