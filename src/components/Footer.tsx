@@ -2,7 +2,7 @@ import { styled } from '../styles/stiches.config';
 import * as FooterCss from '../styles/components/FooterCss';
 import { Link } from './Link';
 
-const Root = styled('header', FooterCss.Root);
+const Root = styled('footer', FooterCss.Root);
 const Container = styled('div', FooterCss.Container);
 
 export function Footer() {
