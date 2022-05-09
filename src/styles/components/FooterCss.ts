@@ -11,6 +11,7 @@ export const Container = css({
     color: '$teal11',
     fontFamily: '$poppinsFont',
     fontSize: '$fontSize14',
+    marginBottom: 64,
     '&>a': {
       color: '$pink11',
       textDecoration: 'none',
