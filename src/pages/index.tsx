@@ -9,6 +9,7 @@ import { Location } from '../components/Location';
 
 import Head from 'next/head';
 import { Footer } from '../components/Footer';
+import { Player } from '../components/Player';
 
 interface HomeProps {
   pixCode: string;
@@ -30,6 +31,7 @@ export default function Home({ pixCode }: HomeProps): JSX.Element {
         <Gifts pixCode={pixCode} />
       </main>
       <Footer />
+      <Player />
     </>
   );
 }

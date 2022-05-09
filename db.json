@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "All I Ever Need",
+    "singer": "Austin Mahone",
+    "thumbnail": "/midia/thumbnail/all-i-ever-need.jpeg",
+    "url": "/midia/all-i-ever-need.mp3"
+  },
+  {
+    "id": 2,
+    "name": "Anyone",
+    "singer": "Justin Bieber",
+    "thumbnail": "/midia/thumbnail/anyone.jpeg",
+    "url": "/midia/anyone.mp3"
+  },
+  {
+    "id": 3,
+    "name": "In My Mind",
+    "singer": "Alok & John Legend",
+    "thumbnail": "/midia/thumbnail/in-my-mind.jpeg",
+    "url": "/midia/in-my-mind.mp3"
+  },
+  {
+    "id": 4,
+    "name": "Let's Get Married",
+    "singer": "William Singe",
+    "thumbnail": "/midia/thumbnail/lets-get-married.jpeg",
+    "url": "/midia/lets-get-married.mp3"
+  },
+  {
+    "id": 5,
+    "name": "Never Forget You",
+    "singer": "Zara Larsson, MNEK",
+    "thumbnail": "/midia/thumbnail/never-forget-you.jpeg",
+    "url": "/midia/never-forget-you.mp3"
+  },
+  {
+    "id": 6,
+    "name": "You Are The Reason",
+    "singer": "Calum Scott, Leona Lewis",
+    "thumbnail": "/midia/thumbnail/you-are-the-reason.jpeg",
+    "url": "/midia/you-are-the-reason.mp3"
+  }
+]
