@@ -18,7 +18,7 @@ const playlist = shufflePlaylist(allSongs);
 export function Player() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const song = playlist[currentSongIndex];
   const hasNext = currentSongIndex + 1 < playlist.length;
