@@ -8,19 +8,21 @@ export const Root = css({
   left: 0,
   width: '100%',
   zIndex: 9999,
-});
 
-export const Container = css({
-  ...ContainerCss,
-  alignItems: 'center',
-  justifyContent: 'space-between',
   backgroundColor: '$pink5',
-  // opacity: 0.95,
   borderRadius: 4,
 
   boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
   pdy: '$space8',
   pdx: '$space12',
+});
+
+export const Container = css({
+  display: 'flex',
+  width: '100%',
+
+  alignItems: 'center',
+  justifyContent: 'space-between',
 });
 
 export const InfoSection = css({
