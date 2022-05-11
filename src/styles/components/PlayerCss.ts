@@ -28,7 +28,7 @@ export const Container = css({
 export const InfoSection = css({
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
+  justifyContent: 'left',
 });
 
 export const Content = css({
