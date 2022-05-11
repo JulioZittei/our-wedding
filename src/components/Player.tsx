@@ -22,6 +22,7 @@ export function Player() {
 
   const song = playlist[currentSongIndex];
   const hasNext = currentSongIndex + 1 < playlist.length;
+  const hasPrevious = currentSongIndex - 1 > -1;
 
   function togglePlay() {
     setIsPlaying(!isPlaying);
@@ -32,6 +33,14 @@ export function Player() {
       setCurrentSongIndex(currentSongIndex + 1);
     } else {
       setCurrentSongIndex(0);
+    }
+  }
+
+  function playPrevious() {
+    if (hasPrevious) {
+      setCurrentSongIndex(currentSongIndex - 1);
+    } else {
+      setCurrentSongIndex(playlist.length - 1);
     }
   }
 
@@ -62,6 +71,9 @@ export function Player() {
           </Content>
         </InfoSection>
         <ControlSection>
+          <Button onClick={playPrevious}>
+            <FaIcon.FaStepBackward />
+          </Button>
           <Button onClick={togglePlay}>{isPlaying ? <FaIcon.FaPause /> : <FaIcon.FaPlay />}</Button>
           <Button onClick={playNext}>
             <FaIcon.FaStepForward />

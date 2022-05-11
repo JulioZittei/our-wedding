@@ -28,7 +28,7 @@ export const Container = css({
 export const InfoSection = css({
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-around',
+  justifyContent: 'space-between',
 });
 
 export const Content = css({
@@ -39,15 +39,15 @@ export const Content = css({
 
   color: '$teal11',
   fontFamily: '$poppinsFont',
-  fontSize: '$fontSize14',
-  lineHeight: '$lineHeight18',
+  fontSize: '$fontSize12',
+  lineHeight: '$lineHeight16',
 });
 
 export const ControlSection = css({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'space-around',
+  justifyContent: 'space-between',
 });
 
 export const Button = css({
