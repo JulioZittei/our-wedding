@@ -1,34 +1,88 @@
 import * as AboutUsCss from '../styles/components/AboutUsCss';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import ElenImage from '../../public/images/elen.jpg';
 import JulioImage from '../../public/images/julio.jpg';
 import { styled } from '../styles/stiches.config';
 import { Link } from './Link';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect, useState } from 'react';
 
 const Root = styled('section', AboutUsCss.Root);
 const Container = styled('div', AboutUsCss.Container);
 const Content = styled('div', AboutUsCss.Content);
-const ContentBox = styled('div', AboutUsCss.Box);
+const ContentBox = styled(motion.div, AboutUsCss.Box);
 const ImageCircle = styled(Link, AboutUsCss.ImageCircle);
 const ImageLayer = styled('div', AboutUsCss.ImageLayer);
-const SimpleImage = styled(Image, AboutUsCss.Image);
+const Image = styled(NextImage, AboutUsCss.Image);
 const Header = styled('header', AboutUsCss.Header);
 const ContentWrapper = styled('div', {});
 const Title = styled('h3', AboutUsCss.Title);
 const Paragraph = styled('p', AboutUsCss.Paragraph);
 
 export function AboutUs() {
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const { ref, inView } = useInView({
+    threshold: 0.4,
+  });
+
+  const defaultAnimationVariant = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  const contentAnimationVariantLeft = {
+    hidden: { opacity: 0, x: '-100vw' },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const contentAnimationVariantRight = {
+    hidden: { opacity: 0, x: '100vw' },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const ringAnimationVariant = {
+    hidden: { opacity: 0, rotate: 360, scale: 0 },
+    visible: { opacity: 1, rotate: 0, scale: 1 },
+  };
+
+  useEffect(() => {
+    if (inView && !shouldAnimate) {
+      setShouldAnimate(!shouldAnimate);
+    } else if (!inView && shouldAnimate) {
+      setShouldAnimate(!shouldAnimate);
+    }
+  }, [inView, shouldAnimate]);
+
   return (
-    <Root id="about-us">
+    <Root id="about-us" ref={ref}>
       <Container>
         <Header>
-          <h2>Sobre nós</h2>
+          <motion.h2
+            layout
+            initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+            animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+            variants={defaultAnimationVariant}
+            transition={{
+              duration: 1,
+            }}
+          >
+            Sobre nós
+          </motion.h2>
         </Header>
         <Content>
-          <ContentBox>
+          <ContentBox
+            initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+            animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+            variants={contentAnimationVariantLeft}
+            transition={{
+              duration: 1,
+              bounce: 0.3,
+            }}
+          >
             <ImageCircle href="https://www.instagram.com/elensousasz/" target="_blank" rel="noopener noreferrer">
               <ImageLayer>
-                <SimpleImage
+                <Image
                   width={80}
                   height={80}
                   layout="intrinsic"
@@ -49,12 +103,36 @@ export function AboutUs() {
             </ContentWrapper>
           </ContentBox>
 
-          <SimpleImage width={100} height={100} layout="intrinsic" src="/images/wedding-ring.png" />
+          <motion.div
+            layout
+            initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+            animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+            variants={ringAnimationVariant}
+            transition={{
+              duration: 1,
+            }}
+          >
+            <Image
+              width={100}
+              height={100}
+              layout="intrinsic"
+              src="/images/wedding-ring.png"
+              alt="alianças de ouro entrelaçadas"
+            />
+          </motion.div>
 
-          <ContentBox>
+          <ContentBox
+            initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+            animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+            variants={contentAnimationVariantRight}
+            transition={{
+              duration: 1,
+              bounce: 0.3,
+            }}
+          >
             <ImageCircle href="https://www.instagram.com/juliozittei/" target="_blank" rel="noopener noreferrer">
               <ImageLayer>
-                <SimpleImage
+                <Image
                   width={80}
                   height={80}
                   layout="intrinsic"

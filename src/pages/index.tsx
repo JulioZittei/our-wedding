@@ -1,13 +1,12 @@
 import type { GetStaticPropsContext, NextApiRequest, NextApiResponse } from 'next';
+import Head from 'next/head';
 import { Header } from '../components/Header';
 import { Hero } from '../components/Hero';
 import { AboutUs } from '../components/AboutUs';
 import { CountDown } from '../components/CountDown';
 import { SaveTheDate } from '../components/SaveTheDate';
-import { Gifts } from '../components/Gifts';
 import { Location } from '../components/Location';
-
-import Head from 'next/head';
+import { Gifts } from '../components/Gifts';
 import { Footer } from '../components/Footer';
 import { Player } from '../components/Player';
 

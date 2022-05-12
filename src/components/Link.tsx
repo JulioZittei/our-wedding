@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 interface LinkProps extends React.HTMLProps<HTMLAnchorElement> {
   href: string;

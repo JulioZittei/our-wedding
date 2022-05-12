@@ -22,6 +22,7 @@ export const Container = css({
 export const Content = css({
   flex: 1,
   width: '100%',
+  overflow: 'hidden',
 
   '@sm': {
     display: 'flex',
