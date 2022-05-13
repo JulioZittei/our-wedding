@@ -17,7 +17,7 @@ const SubTitle = styled('h2', HeroCss.SubTitle);
 export function Hero() {
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const { ref, inView } = useInView({
-    threshold: 0.4,
+    threshold: 0.25,
   });
 
   const defaultAnimationVariant = {

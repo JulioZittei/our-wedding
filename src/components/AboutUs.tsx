@@ -23,7 +23,7 @@ const Paragraph = styled('p', AboutUsCss.Paragraph);
 export function AboutUs() {
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const { ref, inView } = useInView({
-    threshold: 0.4,
+    threshold: 0.25,
   });
 
   const defaultAnimationVariant = {
