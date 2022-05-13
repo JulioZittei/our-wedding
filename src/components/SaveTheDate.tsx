@@ -8,43 +8,111 @@ import { FcGoogle } from 'react-icons/fc';
 import { FcCalendar } from 'react-icons/fc';
 import { Link } from './Link';
 import * as SaveTheDateCss from '../styles/components/SaveTheDateCss';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect, useState } from 'react';
 
 const Root = styled('section', SaveTheDateCss.Root);
 const Container = styled('div', SaveTheDateCss.Container);
 const Header = styled('header', SaveTheDateCss.Header);
 const Content = styled('div', SaveTheDateCss.Content);
 const ContentWrapper = styled('div', SaveTheDateCss.Wrapper);
-const Title = styled('h3', SaveTheDateCss.Title);
-const SubTitle = styled('p', SaveTheDateCss.SubTitle);
-const Card = styled('div', SaveTheDateCss.Card);
+const Title = styled(motion.h3, SaveTheDateCss.Title);
+const SubTitle = styled(motion.p, SaveTheDateCss.SubTitle);
+const Card = styled(motion.div, SaveTheDateCss.Card);
 const LinkButton = styled(Link, SaveTheDateCss.LinkButton);
 
 export function SaveTheDate() {
   const matchedWidthMobile = useMatchMedia('max-width: 768px');
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const { ref, inView } = useInView();
+
+  const defaultAnimationVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  useEffect(() => {
+    if (inView && !shouldAnimate) {
+      setShouldAnimate(!shouldAnimate);
+    } else if (!inView && shouldAnimate) {
+      setShouldAnimate(!shouldAnimate);
+    }
+  }, [inView, shouldAnimate]);
 
   return (
-    <Root id="save-the-date">
+    <Root id="save-the-date" ref={ref}>
       <Container>
         <Header>
-          <h2>Save The Date</h2>
+          <motion.h2
+            layout
+            initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+            animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+            variants={defaultAnimationVariant}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            Save The Date
+          </motion.h2>
         </Header>
 
         <Content>
-          <Title>
+          <Title
+            layout
+            initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+            animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+            variants={defaultAnimationVariant}
+            transition={{
+              delay: 0.3,
+              duration: 0.6,
+            }}
+          >
             <time dateTime="2022-11-26 15:30:00">26 de Novembro de 2022 às 15h30</time>
           </Title>
-          <SubTitle>- Convidamos você para celebrar este grande momento conosco -</SubTitle>
+          <SubTitle
+            layout
+            initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+            animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+            variants={defaultAnimationVariant}
+            transition={{
+              delay: 0.5,
+              duration: 0.6,
+            }}
+          >
+            - Convidamos você para celebrar este grande momento conosco -
+          </SubTitle>
 
-          <Image
-            src={DrawImage}
-            width={744}
-            height={450}
-            objectFit="initial"
-            alt="Ilustração de um calendário com eventos adicionados e um botão para adicionar um evento"
-          />
+          <motion.div
+            layout
+            initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+            animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+            variants={defaultAnimationVariant}
+            transition={{
+              delay: 0.5,
+              duration: 0.6,
+            }}
+          >
+            <Image
+              src={DrawImage}
+              width={744}
+              height={450}
+              objectFit="initial"
+              alt="Ilustração de um calendário com eventos adicionados e um botão para adicionar um evento"
+            />
+          </motion.div>
 
           <ContentWrapper>
-            <Card>
+            <Card
+              layout
+              initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+              animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+              variants={defaultAnimationVariant}
+              transition={{
+                delay: 0.5,
+                duration: 0.6,
+              }}
+            >
               {!matchedWidthMobile && (
                 <div style={{ padding: '2px 2px 0 2px', background: '#fff' }}>
                   <Image
@@ -66,7 +134,16 @@ export function SaveTheDate() {
               </LinkButton>
             </Card>
 
-            <Card>
+            <Card
+              layout
+              initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+              animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+              variants={defaultAnimationVariant}
+              transition={{
+                delay: 0.5,
+                duration: 0.6,
+              }}
+            >
               {!matchedWidthMobile && (
                 <div style={{ padding: '2px 2px 0 2px', background: '#fff' }}>
                   <Image

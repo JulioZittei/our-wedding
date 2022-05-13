@@ -9,8 +9,10 @@ import { ImLink } from 'react-icons/im';
 import { ImCheckmark2 } from 'react-icons/im';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Link } from './Link';
-import { useState } from 'react';
 import { clearTimeout } from 'timers';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect, useState } from 'react';
 
 const Root = styled('section', GiftsCss.Root);
 const Container = styled('div', GiftsCss.Container);
@@ -19,7 +21,7 @@ const Content = styled('div', GiftsCss.Content);
 const ContentWrapper = styled('div', GiftsCss.Wrapper);
 const Title = styled('h3', GiftsCss.Title);
 const SubTitle = styled('p', GiftsCss.SubTitle);
-const Card = styled('div', GiftsCss.Card);
+const Card = styled(motion.div, GiftsCss.Card);
 const LinkButton = styled(Link, GiftsCss.LinkButton);
 const Button = styled('button', GiftsCss.LinkButton);
 
@@ -29,6 +31,21 @@ interface GiftsProps {
 
 export function Gifts({ pixCode }: GiftsProps) {
   const [copied, setCopied] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const { ref, inView } = useInView();
+
+  const defaultAnimationVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  useEffect(() => {
+    if (inView && !shouldAnimate) {
+      setShouldAnimate(!shouldAnimate);
+    } else if (!inView && shouldAnimate) {
+      setShouldAnimate(!shouldAnimate);
+    }
+  }, [inView, shouldAnimate]);
 
   const handleCopyToClipBoard = () => {
     setCopied(true);
@@ -41,23 +58,53 @@ export function Gifts({ pixCode }: GiftsProps) {
   };
 
   return (
-    <Root id="gifts">
+    <Root id="gifts" ref={ref}>
       <Container>
         <Header>
-          <h2>Presentes</h2>
+          <motion.h2
+            layout
+            initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+            animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+            variants={defaultAnimationVariant}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            Presentes
+          </motion.h2>
         </Header>
 
         <Content>
-          <Image
-            src={DrawImage}
-            width={744}
-            height={450}
-            objectFit="initial"
-            priority
-            alt="Ilustração de uma caixa grande de presente com um casal próximo da caixa com balões flutuando"
-          />
+          <motion.div
+            layout
+            initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+            animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+            variants={defaultAnimationVariant}
+            transition={{
+              delay: 0.3,
+              duration: 0.6,
+            }}
+          >
+            <Image
+              src={DrawImage}
+              width={744}
+              height={450}
+              objectFit="initial"
+              priority
+              alt="Ilustração de uma caixa grande de presente com um casal próximo da caixa com balões flutuando"
+            />
+          </motion.div>
           <ContentWrapper>
-            <Card>
+            <Card
+              layout
+              initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+              animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+              variants={defaultAnimationVariant}
+              transition={{
+                delay: 0.3,
+                duration: 0.6,
+              }}
+            >
               <ImGift />
               <Title>Lista de Presentes</Title>
               <LinkButton href="http://finalfeliz.de/elenejulio" target="_blank" rel="noopener noreferrer">
@@ -66,7 +113,16 @@ export function Gifts({ pixCode }: GiftsProps) {
               </LinkButton>
             </Card>
 
-            <Card>
+            <Card
+              layout
+              initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
+              animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
+              variants={defaultAnimationVariant}
+              transition={{
+                delay: 0.3,
+                duration: 0.6,
+              }}
+            >
               <Image
                 src={QRCodePix}
                 width={120}

@@ -16,9 +16,7 @@ const SubTitle = styled('h2', HeroCss.SubTitle);
 
 export function Hero() {
   const [shouldAnimate, setShouldAnimate] = useState(false);
-  const { ref, inView } = useInView({
-    threshold: 0.25,
-  });
+  const { ref, inView } = useInView();
 
   const defaultAnimationVariant = {
     hidden: { opacity: 0 },
@@ -41,7 +39,7 @@ export function Hero() {
         animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
         variants={defaultAnimationVariant}
         transition={{
-          duration: 1,
+          duration: 0.6,
         }}
       >
         <Image
@@ -61,7 +59,7 @@ export function Hero() {
           variants={defaultAnimationVariant}
           transition={{
             delay: 0.5,
-            duration: 1,
+            duration: 0.6,
           }}
         >
           <Container>
