@@ -12,7 +12,7 @@ import * as NavMenuCss from '../styles/components/NavigationMenuCss';
 import { motion } from 'framer-motion';
 
 const Root = styled(NavigationMenuPrimitive.Root, NavMenuCss.Root);
-const Container = styled('div', NavMenuCss.Container);
+const Container = styled(motion.div, NavMenuCss.Container);
 const List = styled(NavigationMenuPrimitive.List, NavMenuCss.List);
 const Item = styled(NavigationMenuPrimitive.Item, NavMenuCss.Item);
 const Link = styled(NavigationMenuPrimitive.Link, NavMenuCss.Link);
@@ -41,7 +41,15 @@ export function NavigationMenu({}: NavigationProps): JSX.Element {
 
   return (
     <Root>
-      <Container>
+      <Container
+        layout
+        initial={`hidden`}
+        animate={`visible`}
+        variants={defaultAnimationVariant}
+        transition={{
+          duration: 0.6,
+        }}
+      >
         <List>
           {matchedWidthMobile && (
             <Item>
@@ -63,17 +71,7 @@ export function NavigationMenu({}: NavigationProps): JSX.Element {
             })}
 
           <Item>
-            <Button
-              onClick={handleToggleTheme}
-              aria-label="Alternar entre o tema light e dark"
-              layout
-              initial={`hidden`}
-              animate={`visible`}
-              variants={defaultAnimationVariant}
-              transition={{
-                duration: 0.6,
-              }}
-            >
+            <Button onClick={handleToggleTheme} aria-label="Alternar entre o tema light e dark">
               <HiOutlineSun />
             </Button>
           </Item>
