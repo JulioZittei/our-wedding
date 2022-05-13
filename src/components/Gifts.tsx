@@ -32,7 +32,9 @@ interface GiftsProps {
 export function Gifts({ pixCode }: GiftsProps) {
   const [copied, setCopied] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(false);
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+  });
 
   const defaultAnimationVariant = {
     hidden: { opacity: 0, y: 20 },

@@ -22,7 +22,9 @@ const Paragraph = styled('p', AboutUsCss.Paragraph);
 
 export function AboutUs() {
   const [shouldAnimate, setShouldAnimate] = useState(false);
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+  });
 
   const defaultAnimationVariant = {
     hidden: { opacity: 0, y: 20 },
@@ -70,12 +72,11 @@ export function AboutUs() {
         </Header>
         <Content>
           <ContentBox
-            layout
             initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
             animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
             variants={contentAnimationVariantLeft}
             transition={{
-              duration: 0.6,
+              duration: 1,
               bounce: 0.3,
             }}
           >
@@ -121,12 +122,11 @@ export function AboutUs() {
           </motion.div>
 
           <ContentBox
-            layout
             initial={`${!shouldAnimate ? 'hidden' : 'visible'}`}
             animate={`${shouldAnimate ? 'visible' : 'hidden'}`}
             variants={contentAnimationVariantRight}
             transition={{
-              duration: 0.6,
+              duration: 1,
               bounce: 0.3,
             }}
           >
