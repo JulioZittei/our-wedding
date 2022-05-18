@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import NextImage from 'next/image';
-import { useEffect, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { GetStaticPropsContext, NextApiRequest, NextApiResponse } from 'next/types';
 import NotFoundImage from '../../public/images/not-found.svg';
 import { Link } from '../components/Link';
 import * as NotFoundCss from '../styles/pages/404Css';
@@ -83,4 +82,10 @@ export default function NotFound(): JSX.Element {
       </Content>
     </Root>
   );
+}
+
+export async function getStaticProps(context: GetStaticPropsContext, req: NextApiRequest, res: NextApiResponse) {
+  return {
+    props: {},
+  };
 }
