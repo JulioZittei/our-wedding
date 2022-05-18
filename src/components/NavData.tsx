@@ -6,27 +6,27 @@ import * as HiIcons from 'react-icons/hi';
 export const NavData = [
   {
     title: 'Home',
-    path: '#home',
+    path: '/#home',
     icon: <AiIcons.AiFillHome />,
   },
   {
     title: 'Sobre nós',
-    path: '#about-us',
+    path: '/#about-us',
     icon: <HiIcons.HiUsers />,
   },
   {
     title: 'Save The Date',
-    path: '#save-the-date',
+    path: '/#save-the-date',
     icon: <IoIcons.IoCalendar />,
   },
   {
     title: 'Localização',
-    path: '#location',
+    path: '/#location',
     icon: <IoIcons.IoLocationSharp />,
   },
   {
     title: 'Presentes',
-    path: '#gifts',
+    path: '/#gifts',
     icon: <FaIcons.FaGift />,
   },
 ];

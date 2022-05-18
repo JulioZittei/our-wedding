@@ -7,8 +7,6 @@ import { CountDown } from '../components/CountDown';
 import { SaveTheDate } from '../components/SaveTheDate';
 import { Location } from '../components/Location';
 import { Gifts } from '../components/Gifts';
-import { Footer } from '../components/Footer';
-import { Player } from '../components/Player';
 
 interface HomeProps {
   pixCode: string;
@@ -20,7 +18,7 @@ export default function Home({ pixCode }: HomeProps): JSX.Element {
       <Head>
         <title>❤️ Élen & Julio ❤️ </title>
       </Head>
-      <Header />
+
       <main>
         <Hero />
         <AboutUs />
@@ -29,8 +27,6 @@ export default function Home({ pixCode }: HomeProps): JSX.Element {
         <Location />
         <Gifts pixCode={pixCode} />
       </main>
-      <Footer />
-      <Player />
     </>
   );
 }

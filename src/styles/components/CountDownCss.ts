@@ -60,6 +60,7 @@ export const Date = css({
   color: '$teal11',
   textAlign: 'center',
   fontFamily: '$poppinsFont',
+  fontWeight: '$fontWeightNormal',
 
   '@sm': {
     fontSize: '$fontSize24',

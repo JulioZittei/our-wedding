@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 const Root = styled('section', AboutUsCss.Root);
 const Container = styled('div', AboutUsCss.Container);
 const Content = styled('div', AboutUsCss.Content);
-const ContentBox = styled(motion.div, AboutUsCss.Box);
+const ContentBox = styled(motion.article, AboutUsCss.Box);
 const ImageCircle = styled(Link, AboutUsCss.ImageCircle);
 const ImageLayer = styled('div', AboutUsCss.ImageLayer);
 const Image = styled(NextImage, AboutUsCss.Image);

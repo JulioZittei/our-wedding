@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 const Figure = styled(motion.figure, HeroCss.Root);
 const Image = styled(NextImage, HeroCss.Image);
 const Content = styled(motion.figcaption, HeroCss.Content);
-const Container = styled('div', HeroCss.Container);
+const Container = styled('article', HeroCss.Container);
 const Header = styled('header', HeroCss.Header);
 const Title = styled('h1', HeroCss.Title);
 const SubTitle = styled('h2', HeroCss.SubTitle);

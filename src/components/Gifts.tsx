@@ -20,8 +20,7 @@ const Header = styled('header', GiftsCss.Header);
 const Content = styled('div', GiftsCss.Content);
 const ContentWrapper = styled('div', GiftsCss.Wrapper);
 const Title = styled('h3', GiftsCss.Title);
-const SubTitle = styled('p', GiftsCss.SubTitle);
-const Card = styled(motion.div, GiftsCss.Card);
+const Card = styled(motion.article, GiftsCss.Card);
 const LinkButton = styled(Link, GiftsCss.LinkButton);
 const Button = styled('button', GiftsCss.LinkButton);
 

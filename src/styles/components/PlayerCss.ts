@@ -3,7 +3,7 @@ import { css } from '../stiches.config';
 import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
-  position: 'fixed',
+  position: 'sticky',
   bottom: 0,
   left: 0,
   width: '100%',

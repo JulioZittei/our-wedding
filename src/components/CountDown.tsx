@@ -7,10 +7,10 @@ import { useInView } from 'react-intersection-observer';
 
 const Root = styled('section', CountDownCss.Root);
 const Container = styled('div', CountDownCss.Container);
-const Wrapper = styled('ul', CountDownCss.Wrapper);
-const TimeBox = styled(motion.li, CountDownCss.TimeBox);
-const Date = styled('span', CountDownCss.Date);
-const Label = styled('span', CountDownCss.Label);
+const Wrapper = styled('div', CountDownCss.Wrapper);
+const TimeBox = styled(motion.article, CountDownCss.TimeBox);
+const Date = styled('h2', CountDownCss.Date);
+const Label = styled('p', CountDownCss.Label);
 
 export function CountDown() {
   const [shouldAnimate, setShouldAnimate] = useState(false);
