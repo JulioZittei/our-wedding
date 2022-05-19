@@ -69,17 +69,16 @@ export const Wrapper = css({
   width: '100%',
   display: 'flex',
 
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexWrap: 'wrap',
+
   '@sm': {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
     gap: '$space12',
     marginTop: '$space16',
   },
   '@lg': {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     gap: '$space16',
     marginTop: '$space32',
   },

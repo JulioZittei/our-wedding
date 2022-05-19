@@ -55,11 +55,11 @@ export function Footer() {
         <Content>
           <Title>Social:</Title>
           <Separator decorative orientation="horizontal" />
-          <Link href="https://www.instagram.com/elensousasz/">
+          <Link href="https://www.instagram.com/elensousasz/" target="_blank" rel="noopener noreferrer">
             <AiFillInstagram />
             @elensousasz
           </Link>
-          <Link href="https://www.instagram.com/juliozittei/">
+          <Link href="https://www.instagram.com/juliozittei/" target="_blank" rel="noopener noreferrer">
             <AiFillInstagram />
             @juliozittei
           </Link>
@@ -69,7 +69,7 @@ export function Footer() {
       <SecondaryFooter>
         <p>
           Developed with ❤️ &nbsp;by{' '}
-          <SimpleLink href="https://github.com/juliozittei" target="_blank">
+          <SimpleLink href="https://github.com/juliozittei" target="_blank" rel="noopener noreferrer">
             Julio Zittei
           </SimpleLink>
         </p>
