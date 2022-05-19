@@ -2,6 +2,7 @@ import { teal } from '@radix-ui/colors';
 import { css } from '../stiches.config';
 
 export const Root = css({
+  background: '$backgroundDefault',
   '@sm': {
     pdy: '$space24',
   },
