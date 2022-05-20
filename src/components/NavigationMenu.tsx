@@ -9,14 +9,13 @@ import NextLink from 'next/link';
 import useMatchMedia from '../hooks/useMatchMedia';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import * as NavMenuCss from '../styles/components/NavigationMenuCss';
-import { motion } from 'framer-motion';
 
 const Root = styled(NavigationMenuPrimitive.Root, NavMenuCss.Root);
-const Container = styled(motion.div, NavMenuCss.Container);
+const Container = styled('div', NavMenuCss.Container);
 const List = styled(NavigationMenuPrimitive.List, NavMenuCss.List);
 const Item = styled(NavigationMenuPrimitive.Item, NavMenuCss.Item);
 const Link = styled(NavigationMenuPrimitive.Link, NavMenuCss.Link);
-const Button = styled(motion.button, NavMenuCss.Button);
+const Button = styled('button', NavMenuCss.Button);
 
 type NavigationProps = React.ComponentProps<typeof NavigationMenuPrimitive.Root> & {};
 
@@ -25,10 +24,6 @@ export function NavigationMenu({}: NavigationProps): JSX.Element {
   const { setTheme, resolvedTheme } = useTheme();
 
   const matchedWidthMobile = useMatchMedia('max-width: 768px');
-  const defaultAnimationVariant = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
 
   useEffect(() => setMounted(true), []);
 
@@ -41,15 +36,7 @@ export function NavigationMenu({}: NavigationProps): JSX.Element {
 
   return (
     <Root>
-      <Container
-        layout
-        initial={`hidden`}
-        animate={`visible`}
-        variants={defaultAnimationVariant}
-        transition={{
-          duration: 0.6,
-        }}
-      >
+      <Container>
         <List>
           {matchedWidthMobile && (
             <Item>
