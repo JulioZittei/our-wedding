@@ -2,6 +2,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io5';
 import * as HiIcons from 'react-icons/hi';
+import * as BiIcons from 'react-icons/bi';
 
 export const NavData = [
   {
@@ -28,5 +29,10 @@ export const NavData = [
     title: 'Presentes',
     path: '/#gifts',
     icon: <FaIcons.FaGift />,
+  },
+  {
+    title: 'Presença',
+    path: '/confirmacao-presenca',
+    icon: <BiIcons.BiCalendarCheck />,
   },
 ];
