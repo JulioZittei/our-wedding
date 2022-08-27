@@ -5,7 +5,7 @@ import { Player } from '../components/Player';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { SessionProvider } from 'next-auth/react';
-import { Optout } from '../components/Optout';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
@@ -20,9 +20,11 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
         }}
       >
         {globalStyles()}
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        </Head>
         <Header />
         <Component {...pageProps} />
-        <Optout />
         <Footer />
         <Player />
       </ThemeProvider>

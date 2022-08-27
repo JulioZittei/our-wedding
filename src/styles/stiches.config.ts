@@ -49,7 +49,7 @@ const { css, globalCss, keyframes, theme, createTheme, getCssText, config, style
     },
     fonts: {
       cinzelFont: "'Cinzel Decorative', cursive",
-      poppinsFont: "'Poppins', sans-serif",
+      poppinsFont: "'Poppins', 'Open Sans' , Helvetica, Arial, sans-serif",
     },
     fontSizes: {
       fontSize10: '0.625rem', // 10px
@@ -139,6 +139,7 @@ const globalStyles = globalCss({
     margin: 0,
     padding: 0,
     boxSizing: 'border-box',
+    fontFamily: '$poppinsFont',
   },
   html: {
     scrollBehavior: 'smooth',

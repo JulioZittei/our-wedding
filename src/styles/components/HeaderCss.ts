@@ -7,7 +7,7 @@ export const Root = css({
   top: 0,
   left: 0,
   right: 0,
-  zIndex: 9999,
+  zIndex: 999,
   backgroundColor: '$backgroundDefault',
 });
 

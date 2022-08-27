@@ -17,7 +17,7 @@ export function CountDown() {
   const { ref, inView } = useInView({
     threshold: 0.1,
   });
-  const weddingDate = '26/11/2022 18:00:00';
+  const weddingDate = '26/11/2022 15:30:00';
   const now = moment().format('DD/MM/YYYY HH:mm:ss');
   const diff = moment(weddingDate, 'DD/MM/YYYY HH:mm:ss').diff(moment(now, 'DD/MM/YYYY HH:mm:ss'));
 

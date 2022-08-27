@@ -6,6 +6,7 @@ import { CountDown } from '../components/CountDown';
 import { SaveTheDate } from '../components/SaveTheDate';
 import { Location } from '../components/Location';
 import { Gifts } from '../components/Gifts';
+import { Optout } from '../components/Optout';
 
 interface HomeProps {
   pixCode: string;
@@ -26,6 +27,7 @@ export default function Home({ pixCode }: HomeProps): JSX.Element {
         <Location />
         <Gifts pixCode={pixCode} />
       </main>
+      <Optout />
     </>
   );
 }
