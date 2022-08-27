@@ -7,6 +7,7 @@ import { SaveTheDate } from '../components/SaveTheDate';
 import { Location } from '../components/Location';
 import { Gifts } from '../components/Gifts';
 import { Optout } from '../components/Optout';
+import { Header } from '../components/Header';
 
 interface HomeProps {
   pixCode: string;
@@ -19,6 +20,7 @@ export default function Home({ pixCode }: HomeProps): JSX.Element {
         <title>❤️ Élen & Julio ❤️ </title>
       </Head>
 
+      <Header isSticky />
       <main>
         <Hero />
         <AboutUs />

@@ -9,6 +9,14 @@ export const Root = css({
   right: 0,
   zIndex: 999,
   backgroundColor: '$backgroundDefault',
+
+  variants: {
+    isSticky: {
+      false: {
+        position: 'inherit',
+      },
+    },
+  },
 });
 
 export const Container = css({

@@ -14,10 +14,11 @@ import withReactContent from 'sweetalert2-react-content';
 import * as yup from 'yup';
 import * as GiftsCss from '../styles/components/GiftsCss';
 import * as AttendaceConfirmationCss from '../styles/pages/AttendanceConfirmationCss';
+import { Header } from '../components/Header';
 
 const Root = styled('section', AttendaceConfirmationCss.Root);
 const Container = styled('div', AttendaceConfirmationCss.Container);
-const Header = styled('header', AttendaceConfirmationCss.Header);
+const HeaderForm = styled('header', AttendaceConfirmationCss.Header);
 const Content = styled('div', AttendaceConfirmationCss.Content);
 const Title = styled(motion.h2, AttendaceConfirmationCss.Title);
 const SubTitle = styled(motion.p, AttendaceConfirmationCss.SubTitle);
@@ -161,196 +162,199 @@ export default function AttendaceConfirmation(): JSX.Element {
   };
 
   return (
-    <main>
-      <Head>
-        <title>❤️ Confirmação de Presença ❤️</title>
-      </Head>
-      <Root>
-        <Container>
-          <Header>
-            <motion.h1
-              layout
-              initial={`hidden`}
-              animate={`visible`}
-              variants={defaultAnimationVariant}
-              transition={{
-                duration: 0.6,
-              }}
-            >
-              Confirmação de Presença
-            </motion.h1>
-          </Header>
+    <>
+      <Header />
+      <main>
+        <Head>
+          <title>❤️ Confirmação de Presença ❤️</title>
+        </Head>
+        <Root>
+          <Container>
+            <HeaderForm>
+              <motion.h1
+                layout
+                initial={`hidden`}
+                animate={`visible`}
+                variants={defaultAnimationVariant}
+                transition={{
+                  duration: 0.6,
+                }}
+              >
+                Confirmação de Presença
+              </motion.h1>
+            </HeaderForm>
 
-          <Content>
-            <Title
-              layout
-              initial={`hidden`}
-              animate={`visible`}
-              variants={defaultAnimationVariant}
-              transition={{
-                delay: 0.3,
-                duration: 0.6,
-              }}
-            >
-              {/* Confirme abaixo a sua presença no casamento */}
-              Leia atentamente as informações dos campos abaixo
-            </Title>
-            <SubTitle
-              layout
-              initial={`hidden`}
-              animate={`visible`}
-              variants={defaultAnimationVariant}
-              transition={{
-                delay: 0.5,
-                duration: 0.6,
-              }}
-            >
-              Todos os campos marcados com (*) são de preenchimento obrigatório.
-            </SubTitle>
+            <Content>
+              <Title
+                layout
+                initial={`hidden`}
+                animate={`visible`}
+                variants={defaultAnimationVariant}
+                transition={{
+                  delay: 0.3,
+                  duration: 0.6,
+                }}
+              >
+                {/* Confirme abaixo a sua presença no casamento */}
+                Leia atentamente as informações dos campos abaixo
+              </Title>
+              <SubTitle
+                layout
+                initial={`hidden`}
+                animate={`visible`}
+                variants={defaultAnimationVariant}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.6,
+                }}
+              >
+                Todos os campos marcados com (*) são de preenchimento obrigatório.
+              </SubTitle>
 
-            <Form onSubmit={onSubmit}>
-              <FormControl css={{ marginBottom: 10 }}>
+              <Form onSubmit={onSubmit}>
+                <FormControl css={{ marginBottom: 10 }}>
+                  <FormGroup>
+                    <Controller
+                      render={({ field }) => (
+                        <StatusButton
+                          {...field}
+                          selected={field.value === 'attend'}
+                          css={errors?.status ? { borderColor: '$red7', color: '$red11' } : {}}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            field.onChange('attend');
+                          }}
+                        >
+                          Eu vou
+                        </StatusButton>
+                      )}
+                      name="status"
+                      control={control}
+                    />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <Controller
+                      render={({ field }) => (
+                        <StatusButton
+                          {...field}
+                          selected={field.value === 'not_attend'}
+                          css={errors?.status ? { borderColor: '$red7', color: '$red11' } : {}}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            field.onChange('not_attend');
+                          }}
+                        >
+                          Eu não vou
+                        </StatusButton>
+                      )}
+                      name="status"
+                      control={control}
+                    />
+                  </FormGroup>
+                </FormControl>
+
+                <FormGroup>{errors?.status && <FormHelperError>{errors?.status.message}</FormHelperError>}</FormGroup>
+
                 <FormGroup>
+                  <Label htmlFor="name" css={errors?.name ? { color: '$red11' } : {}}>
+                    *Nome completo
+                  </Label>
+
                   <Controller
                     render={({ field }) => (
-                      <StatusButton
+                      <Input
                         {...field}
-                        selected={field.value === 'attend'}
-                        css={errors?.status ? { borderColor: '$red7', color: '$red11' } : {}}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          field.onChange('attend');
+                        id="name"
+                        type="text"
+                        autoFocus
+                        css={errors?.name ? { borderColor: '$red7' } : {}}
+                        onChange={(e) => {
+                          maskName(e);
+                          field.onChange(e.target.value);
                         }}
-                      >
-                        Eu vou
-                      </StatusButton>
+                      />
                     )}
-                    name="status"
+                    name="name"
                     control={control}
                   />
+
+                  {errors?.name ? (
+                    <FormHelperError>{errors?.name.message}</FormHelperError>
+                  ) : (
+                    <FormHelperText>
+                      A confirmação é feita pela nome completo, porque se alguém tiver o nome igual ao seu, pode
+                      sobrescrever sua confirmação
+                    </FormHelperText>
+                  )}
                 </FormGroup>
 
                 <FormGroup>
+                  <Label htmlFor="phone" css={errors?.phone ? { color: '$red11' } : {}}>
+                    *Telefone
+                  </Label>
+
                   <Controller
                     render={({ field }) => (
-                      <StatusButton
+                      <Input
                         {...field}
-                        selected={field.value === 'not_attend'}
-                        css={errors?.status ? { borderColor: '$red7', color: '$red11' } : {}}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          field.onChange('not_attend');
+                        id="phone"
+                        type="text"
+                        maxLength={15}
+                        css={errors?.phone ? { borderColor: '$red7' } : {}}
+                        onChange={(e) => {
+                          maskPhone(e);
+                          field.onChange(e.target.value);
                         }}
-                      >
-                        Eu não vou
-                      </StatusButton>
+                      />
                     )}
-                    name="status"
+                    name="phone"
                     control={control}
                   />
+                  {errors?.phone ? (
+                    <FormHelperError>{errors?.phone.message}</FormHelperError>
+                  ) : (
+                    <FormHelperText>Informe o número que você utiliza no WhatsApp</FormHelperText>
+                  )}
                 </FormGroup>
-              </FormControl>
 
-              <FormGroup>{errors?.status && <FormHelperError>{errors?.status.message}</FormHelperError>}</FormGroup>
+                <FormGroup>
+                  <Label htmlFor="adults_number" css={errors?.adults_number ? { color: '$red11' } : {}}>
+                    *Convidados (acima de 6 anos)
+                  </Label>
 
-              <FormGroup>
-                <Label htmlFor="name" css={errors?.name ? { color: '$red11' } : {}}>
-                  *Nome completo
-                </Label>
+                  <Controller
+                    render={({ field }) => (
+                      <Select
+                        {...field}
+                        id="adults_number"
+                        data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+                        css={errors?.adults_number ? { borderColor: '$red7' } : {}}
+                        description={{ singular: 'Convidado', plural: 'Convidados' }}
+                        aria_label="Quantidade de convidados"
+                        onValueChange={(value) => field.onChange(value)}
+                      />
+                    )}
+                    name="adults_number"
+                    control={control}
+                  />
 
-                <Controller
-                  render={({ field }) => (
-                    <Input
-                      {...field}
-                      id="name"
-                      type="text"
-                      autoFocus
-                      css={errors?.name ? { borderColor: '$red7' } : {}}
-                      onChange={(e) => {
-                        maskName(e);
-                        field.onChange(e.target.value);
-                      }}
-                    />
+                  {errors?.adults_number ? (
+                    <FormHelperError>{errors?.adults_number.message}</FormHelperError>
+                  ) : (
+                    <FormHelperText>Quantas pessoas irão comparecer (incluindo você)</FormHelperText>
                   )}
-                  name="name"
-                  control={control}
-                />
+                </FormGroup>
 
-                {errors?.name ? (
-                  <FormHelperError>{errors?.name.message}</FormHelperError>
-                ) : (
-                  <FormHelperText>
-                    A confirmação é feita pela nome completo, porque se alguém tiver o nome igual ao seu, pode
-                    sobrescrever sua confirmação
-                  </FormHelperText>
-                )}
-              </FormGroup>
-
-              <FormGroup>
-                <Label htmlFor="phone" css={errors?.phone ? { color: '$red11' } : {}}>
-                  *Telefone
-                </Label>
-
-                <Controller
-                  render={({ field }) => (
-                    <Input
-                      {...field}
-                      id="phone"
-                      type="text"
-                      maxLength={15}
-                      css={errors?.phone ? { borderColor: '$red7' } : {}}
-                      onChange={(e) => {
-                        maskPhone(e);
-                        field.onChange(e.target.value);
-                      }}
-                    />
-                  )}
-                  name="phone"
-                  control={control}
-                />
-                {errors?.phone ? (
-                  <FormHelperError>{errors?.phone.message}</FormHelperError>
-                ) : (
-                  <FormHelperText>Informe o número que você utiliza no WhatsApp</FormHelperText>
-                )}
-              </FormGroup>
-
-              <FormGroup>
-                <Label htmlFor="adults_number" css={errors?.adults_number ? { color: '$red11' } : {}}>
-                  *Convidados (acima de 6 anos)
-                </Label>
-
-                <Controller
-                  render={({ field }) => (
-                    <Select
-                      {...field}
-                      id="adults_number"
-                      data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-                      css={errors?.adults_number ? { borderColor: '$red7' } : {}}
-                      description={{ singular: 'Convidado', plural: 'Convidados' }}
-                      aria_label="Quantidade de convidados"
-                      onValueChange={(value) => field.onChange(value)}
-                    />
-                  )}
-                  name="adults_number"
-                  control={control}
-                />
-
-                {errors?.adults_number ? (
-                  <FormHelperError>{errors?.adults_number.message}</FormHelperError>
-                ) : (
-                  <FormHelperText>Quantas pessoas irão comparecer (incluindo você)</FormHelperText>
-                )}
-              </FormGroup>
-
-              <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? '' : <BiCalendarCheck />}
-                {isSubmitting ? 'Confirmando, aguarde...' : 'Confirmar Presença'}
-              </Button>
-            </Form>
-          </Content>
-        </Container>
-      </Root>
-    </main>
+                <Button type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? '' : <BiCalendarCheck />}
+                  {isSubmitting ? 'Confirmando, aguarde...' : 'Confirmar Presença'}
+                </Button>
+              </Form>
+            </Content>
+          </Container>
+        </Root>
+      </main>
+    </>
   );
 }
