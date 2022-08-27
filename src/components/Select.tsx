@@ -51,12 +51,12 @@ export const Select = ({ description, data, id, aria_label, css, ...props }: Sel
                 {item === 0 && <SelectItemText>Nenhuma {description.singular}</SelectItemText>}
                 {item === 1 && (
                   <SelectItemText>
-                    0{item} {description.singular}
+                    {item} {description.singular}
                   </SelectItemText>
                 )}
                 {item > 1 && (
                   <SelectItemText>
-                    0{item} {description.plural}
+                    {item} {description.plural}
                   </SelectItemText>
                 )}
                 <SelectItemIndicator>

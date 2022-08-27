@@ -192,7 +192,8 @@ export default function AttendaceConfirmation(): JSX.Element {
                 duration: 0.6,
               }}
             >
-              Confirme abaixo a sua presença no casamento
+              {/* Confirme abaixo a sua presença no casamento */}
+              Leia atentamente as informações dos campos abaixo
             </Title>
             <SubTitle
               layout
@@ -314,62 +315,33 @@ export default function AttendaceConfirmation(): JSX.Element {
                 )}
               </FormGroup>
 
-              <FormControl>
-                <FormGroup>
-                  <Label htmlFor="adults_number" css={errors?.adults_number ? { color: '$red11' } : {}}>
-                    *Adultos
-                  </Label>
+              <FormGroup>
+                <Label htmlFor="adults_number" css={errors?.adults_number ? { color: '$red11' } : {}}>
+                  *Convidados (acima de 6 anos)
+                </Label>
 
-                  <Controller
-                    render={({ field }) => (
-                      <Select
-                        {...field}
-                        id="adults_number"
-                        data={[1, 2, 3, 4, 5]}
-                        css={errors?.adults_number ? { borderColor: '$red7' } : {}}
-                        description={{ singular: 'Adulto', plural: 'Adultos' }}
-                        aria_label="Quantidade de adultos"
-                        onValueChange={(value) => field.onChange(value)}
-                      />
-                    )}
-                    name="adults_number"
-                    control={control}
-                  />
-
-                  {errors?.adults_number ? (
-                    <FormHelperError>{errors?.adults_number.message}</FormHelperError>
-                  ) : (
-                    <FormHelperText>Essa quantidade deve ser informada contando com você.</FormHelperText>
+                <Controller
+                  render={({ field }) => (
+                    <Select
+                      {...field}
+                      id="adults_number"
+                      data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+                      css={errors?.adults_number ? { borderColor: '$red7' } : {}}
+                      description={{ singular: 'Convidado', plural: 'Convidados' }}
+                      aria_label="Quantidade de convidados"
+                      onValueChange={(value) => field.onChange(value)}
+                    />
                   )}
-                </FormGroup>
+                  name="adults_number"
+                  control={control}
+                />
 
-                <FormGroup>
-                  <Label htmlFor="children_number" css={errors?.children_number ? { color: '$red11' } : {}}>
-                    *Crianças (acima de 6 anos)
-                  </Label>
-                  <Controller
-                    render={({ field }) => (
-                      <Select
-                        {...field}
-                        id="children_number"
-                        data={[0, 1, 2, 3, 4, 5]}
-                        description={{ singular: 'Criança', plural: 'Crianças' }}
-                        css={errors?.children_number ? { borderColor: '$red7' } : {}}
-                        aria_label="Quantidade de crianças"
-                        onValueChange={(value) => field.onChange(value)}
-                      />
-                    )}
-                    name="children_number"
-                    control={control}
-                  />
-
-                  {errors?.children_number ? (
-                    <FormHelperError>{errors?.children_number.message}</FormHelperError>
-                  ) : (
-                    <FormHelperText>Crianças até 6 anos não necessitam de confirmação.</FormHelperText>
-                  )}
-                </FormGroup>
-              </FormControl>
+                {errors?.adults_number ? (
+                  <FormHelperError>{errors?.adults_number.message}</FormHelperError>
+                ) : (
+                  <FormHelperText>Quantas pessoas irão comparecer (incluindo você)</FormHelperText>
+                )}
+              </FormGroup>
 
               <Button type="submit" disabled={isSubmitting}>
                 {isSubmitting ? '' : <BiCalendarCheck />}
