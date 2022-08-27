@@ -7,7 +7,7 @@ export const Root = css({
   bottom: 0,
   left: 0,
   width: '100%',
-  zIndex: 9999,
+  zIndex: 999,
 
   backgroundColor: '$pink5',
   borderRadius: 4,

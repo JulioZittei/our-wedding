@@ -22,9 +22,9 @@ const Content = styled('div', AttendaceConfirmationCss.Content);
 const Title = styled(motion.h2, AttendaceConfirmationCss.Title);
 const SubTitle = styled(motion.p, AttendaceConfirmationCss.SubTitle);
 
-const Form = styled(motion.form, AttendaceConfirmationCss.Form);
+const Form = styled('form', AttendaceConfirmationCss.Form);
 const FormControl = styled('div', AttendaceConfirmationCss.FormControl);
-const FormGroup = styled(motion.div, AttendaceConfirmationCss.FormGroup);
+const FormGroup = styled('div', AttendaceConfirmationCss.FormGroup);
 const Label = styled('label', AttendaceConfirmationCss.Label);
 const FormHelperText = styled('div', AttendaceConfirmationCss.FormHelperText);
 const FormHelperError = styled('div', AttendaceConfirmationCss.FormHelperError);
@@ -59,6 +59,7 @@ const messages: Map = {
       </LinkButton>
     ),
     showConfirmButton: false,
+    showCloseButton: true,
   },
   not_attend: {
     title: 'Que pena, os noivos sentirão sua falta :(',
@@ -73,6 +74,7 @@ const messages: Map = {
       </LinkButton>
     ),
     showConfirmButton: false,
+    showCloseButton: true,
   },
   name: {
     title: 'Nome fora da lista',
@@ -86,6 +88,7 @@ const messages: Map = {
       </LinkButton>
     ),
     showConfirmButton: false,
+    showCloseButton: true,
   },
   reconfirmation: {
     title: 'Convidado já está confirmado',
@@ -99,6 +102,7 @@ const messages: Map = {
       </LinkButton>
     ),
     showConfirmButton: false,
+    showCloseButton: true,
   },
 };
 
@@ -107,16 +111,16 @@ const MySwal = withReactContent(Swal);
 const schema = yup.object().shape({
   name: yup
     .string()
-    .required('Nome é obrigatório!')
+    .required('Opa, esse campo é obrigatório!')
     .matches(/^\S.*[a-zA-ZA-Za-zÀ-ü].*\S$/g, 'Nome não é válido!'),
   phone: yup
     .string()
-    .required('Telefone é obrigatório!')
+    .required('Opa, esse campo é obrigatório!')
     .matches(/^\([1-9]{2}\) (9[1-9])[0-9]{3}\-[0-9]{4}$/, 'Telefone não é válido!'),
-  email: yup.string().required('Email é o obrigatório!').email('Email não é válido'),
-  adults_number: yup.string().required('Quantidade de adultos é obrigatório!'),
-  children_number: yup.string().required('Quantidade de crianças é obrigatório!'),
-  status: yup.string().required('Resposta da presença é obrigatória!'),
+  email: yup.string(),
+  adults_number: yup.string().required('Opa esse campo é obrigatório!'),
+  children_number: yup.string().required('Opa esse campo é obrigatório!'),
+  status: yup.string().required('Opa esse campo é obrigatório!'),
 });
 
 export default function AttendaceConfirmation(): JSX.Element {
@@ -204,16 +208,8 @@ export default function AttendaceConfirmation(): JSX.Element {
             </SubTitle>
 
             <Form onSubmit={onSubmit}>
-              <FormControl>
-                <FormGroup
-                  layout
-                  initial={`hidden`}
-                  animate={`visible`}
-                  variants={defaultAnimationVariant}
-                  transition={{
-                    duration: 0.6,
-                  }}
-                >
+              <FormControl css={{ marginBottom: 10 }}>
+                <FormGroup>
                   <Controller
                     render={({ field }) => (
                       <StatusButton
@@ -233,15 +229,7 @@ export default function AttendaceConfirmation(): JSX.Element {
                   />
                 </FormGroup>
 
-                <FormGroup
-                  layout
-                  initial={`hidden`}
-                  animate={`visible`}
-                  variants={defaultAnimationVariant}
-                  transition={{
-                    duration: 0.6,
-                  }}
-                >
+                <FormGroup>
                   <Controller
                     render={({ field }) => (
                       <StatusButton
@@ -264,17 +252,9 @@ export default function AttendaceConfirmation(): JSX.Element {
 
               <FormGroup>{errors?.status && <FormHelperError>{errors?.status.message}</FormHelperError>}</FormGroup>
 
-              <FormGroup
-                layout
-                initial={`hidden`}
-                animate={`visible`}
-                variants={defaultAnimationVariant}
-                transition={{
-                  duration: 0.6,
-                }}
-              >
+              <FormGroup>
                 <Label htmlFor="name" css={errors?.name ? { color: '$red11' } : {}}>
-                  *Nome
+                  *Nome completo
                 </Label>
 
                 <Controller
@@ -298,19 +278,14 @@ export default function AttendaceConfirmation(): JSX.Element {
                 {errors?.name ? (
                   <FormHelperError>{errors?.name.message}</FormHelperError>
                 ) : (
-                  <FormHelperText>Primeiro nome ou igual ao escrito no convite</FormHelperText>
+                  <FormHelperText>
+                    A confirmação é feita pela nome completo, porque se alguém tiver o nome igual ao seu, pode
+                    sobrescrever sua confirmação
+                  </FormHelperText>
                 )}
               </FormGroup>
 
-              <FormGroup
-                layout
-                initial={`hidden`}
-                animate={`visible`}
-                variants={defaultAnimationVariant}
-                transition={{
-                  duration: 0.6,
-                }}
-              >
+              <FormGroup>
                 <Label htmlFor="phone" css={errors?.phone ? { color: '$red11' } : {}}>
                   *Telefone
                 </Label>
@@ -321,6 +296,7 @@ export default function AttendaceConfirmation(): JSX.Element {
                       {...field}
                       id="phone"
                       type="text"
+                      maxLength={15}
                       css={errors?.phone ? { borderColor: '$red7' } : {}}
                       onChange={(e) => {
                         maskPhone(e);
@@ -338,43 +314,8 @@ export default function AttendaceConfirmation(): JSX.Element {
                 )}
               </FormGroup>
 
-              <FormGroup
-                layout
-                initial={`hidden`}
-                animate={`visible`}
-                variants={defaultAnimationVariant}
-                transition={{
-                  duration: 0.6,
-                }}
-              >
-                <Label htmlFor="email" css={errors?.email ? { color: '$red11' } : {}}>
-                  *Email
-                </Label>
-
-                <Controller
-                  render={({ field }) => (
-                    <Input {...field} id="email" type="text" css={errors?.email ? { borderColor: '$red7' } : {}} />
-                  )}
-                  name="email"
-                  control={control}
-                />
-                {errors?.email ? (
-                  <FormHelperError>{errors?.email.message}</FormHelperError>
-                ) : (
-                  <FormHelperText>Informe o seu melhor e-mail para contato</FormHelperText>
-                )}
-              </FormGroup>
-
               <FormControl>
-                <FormGroup
-                  layout
-                  initial={`hidden`}
-                  animate={`visible`}
-                  variants={defaultAnimationVariant}
-                  transition={{
-                    duration: 0.6,
-                  }}
-                >
+                <FormGroup>
                   <Label htmlFor="adults_number" css={errors?.adults_number ? { color: '$red11' } : {}}>
                     *Adultos
                   </Label>
@@ -402,15 +343,7 @@ export default function AttendaceConfirmation(): JSX.Element {
                   )}
                 </FormGroup>
 
-                <FormGroup
-                  layout
-                  initial={`hidden`}
-                  animate={`visible`}
-                  variants={defaultAnimationVariant}
-                  transition={{
-                    duration: 0.6,
-                  }}
-                >
+                <FormGroup>
                   <Label htmlFor="children_number" css={errors?.children_number ? { color: '$red11' } : {}}>
                     *Crianças (acima de 6 anos)
                   </Label>
@@ -433,14 +366,14 @@ export default function AttendaceConfirmation(): JSX.Element {
                   {errors?.children_number ? (
                     <FormHelperError>{errors?.children_number.message}</FormHelperError>
                   ) : (
-                    <FormHelperText>Crianças até 6 anos não contam como convidados.</FormHelperText>
+                    <FormHelperText>Crianças até 6 anos não necessitam de confirmação.</FormHelperText>
                   )}
                 </FormGroup>
               </FormControl>
 
               <Button type="submit" disabled={isSubmitting}>
-                <BiCalendarCheck />
-                {isSubmitting ? 'Confirmando, aguarde...' : ' Confirmar Presença'}
+                {isSubmitting ? '' : <BiCalendarCheck />}
+                {isSubmitting ? 'Confirmando, aguarde...' : 'Confirmar Presença'}
               </Button>
             </Form>
           </Content>

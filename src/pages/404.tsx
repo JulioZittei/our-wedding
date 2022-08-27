@@ -9,10 +9,13 @@ import * as NotFoundCss from '../styles/pages/404Css';
 import { styled } from '../styles/stiches.config';
 
 const Root = styled('section', NotFoundCss.Root);
-const Image = styled(NextImage, NotFoundCss.Image);
-const Container = styled(motion.div, NotFoundCss.Container);
 const Content = styled('article', NotFoundCss.Content);
 const Button = styled(Link, NotFoundCss.LinkButton);
+const ErrorCode = styled(motion.div, {
+  fontFamily: '$poppinsFont',
+  fontSize: '$fontSize96',
+  color: '$mauve11',
+});
 
 export default function NotFound(): JSX.Element {
   const defaultAnimationVariant = {
@@ -27,27 +30,20 @@ export default function NotFound(): JSX.Element {
           <Head>
             <title>❤️ Página não encontrada❤️ </title>
           </Head>
-          <Container
-            layout
-            initial={`hidden}`}
-            animate={`visible`}
-            variants={defaultAnimationVariant}
-            transition={{
-              duration: 0.6,
-            }}
-          >
-            <Image
-              src={NotFoundImage}
-              layout="intrinsic"
-              width={1920}
-              height={1080}
-              objectFit="contain"
-              priority
-              alt="Ilustração de uma paisagem com sol, nuvens, montanhas e em destaque o número 404."
-            />
-          </Container>
 
           <Content>
+            <ErrorCode
+              layout
+              initial={`hidden}`}
+              animate={`visible`}
+              variants={defaultAnimationVariant}
+              transition={{
+                delay: 0.3,
+                duration: 0.6,
+              }}
+            >
+              404
+            </ErrorCode>
             <motion.h1
               layout
               initial={`hidden}`}

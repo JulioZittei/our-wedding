@@ -12,24 +12,6 @@ export const Root = css({
   },
 });
 
-export const Container = css({
-  position: 'relative',
-  display: 'flex',
-  justifyContent: 'center',
-
-  '@sm': {
-    aspectRatio: 1.75,
-  },
-
-  '@lg': {
-    aspectRatio: 2.75,
-  },
-});
-
-export const Image = css({
-  width: '100%',
-});
-
 export const Content = css({
   display: 'flex',
   flexDirection: 'column',

@@ -88,7 +88,7 @@ export const SubTitle = css({
   fontSize: '$fontSize12',
   lineHeight: '$lineHeight16',
   marginTop: '$space4',
-  marginBottom: '$space16',
+  marginBottom: '$space32',
   textDecoration: 'none',
 });
 
@@ -106,12 +106,20 @@ export const FormControl = css({
   display: 'flex',
   width: '100%',
   justifyContent: 'space-between',
+  alignItems: 'center',
+  marginBottom: 20,
 
   '@sm': {
     flexDirection: 'column',
+    '&>div:last-child': {
+      marginBottom: 0,
+    },
   },
 
   '@lg': {
+    '&>div': {
+      marginBottom: 0,
+    },
     flexDirection: 'row',
     gap: 10,
   },
@@ -122,7 +130,7 @@ export const FormGroup = css({
   width: '100%',
   flexDirection: 'column',
   alignItems: 'left',
-  marginBottom: 10,
+  marginBottom: 20,
 });
 
 export const Label = css({
