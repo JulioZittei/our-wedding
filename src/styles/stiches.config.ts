@@ -143,7 +143,7 @@ const globalStyles = globalCss({
   },
   html: {
     scrollBehavior: 'smooth',
-    scrollPaddingTop: 141,
+    // scrollPaddingTop: 141,
   },
   body: {
     backgroundColor: '$backgroundDefault',
