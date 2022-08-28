@@ -5,7 +5,7 @@ import { ContainerCss } from './ContainerCss';
 export const Root = css({
   position: 'relative',
   width: '100vw',
-  zIndex: 9999,
+  zIndex: 1020,
   borderBottom: '1px solid',
   borderTop: '1px solid',
   borderColor: '$mauve6',

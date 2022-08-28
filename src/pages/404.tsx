@@ -3,6 +3,7 @@ import Head from 'next/head';
 import NextImage from 'next/image';
 import { GetStaticPropsContext, NextApiRequest, NextApiResponse } from 'next/types';
 import NotFoundImage from '../../public/images/not-found.svg';
+import { Header } from '../components/Header';
 import { Link } from '../components/Link';
 import { Optout } from '../components/Optout';
 import * as NotFoundCss from '../styles/pages/404Css';
@@ -25,6 +26,7 @@ export default function NotFound(): JSX.Element {
 
   return (
     <>
+      <Header />
       <main>
         <Root>
           <Head>

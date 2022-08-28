@@ -20,7 +20,7 @@ export default function Home({ pixCode }: HomeProps): JSX.Element {
         <title>❤️ Élen & Julio ❤️ </title>
       </Head>
 
-      <Header isSticky />
+      <Header />
       <main>
         <Hero />
         <AboutUs />

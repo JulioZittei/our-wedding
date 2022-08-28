@@ -2,21 +2,13 @@ import { css } from '../stiches.config';
 import { ContainerCss } from './ContainerCss';
 
 export const Root = css({
-  position: 'sticky',
+  position: 'inherit',
   width: '100%',
   top: 0,
   left: 0,
   right: 0,
-  zIndex: 999,
+  zIndex: 1020,
   backgroundColor: '$backgroundDefault',
-
-  variants: {
-    isSticky: {
-      false: {
-        position: 'inherit',
-      },
-    },
-  },
 });
 
 export const Container = css({

@@ -6,13 +6,11 @@ import { Logo } from './Logo';
 const Root = styled('header', HeaderCss.Root);
 const Container = styled('div', HeaderCss.Container);
 
-interface HeaderProps {
-  isSticky?: boolean;
-}
+interface HeaderProps {}
 
-export function Header({ isSticky = false }: HeaderProps) {
+export function Header({}: HeaderProps) {
   return (
-    <Root isSticky={isSticky}>
+    <Root>
       <Container css={{ alignItems: 'center', justifyContent: 'center' }}>
         <Logo />
       </Container>
