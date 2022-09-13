@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 import { styled } from '../styles/stiches.config';
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { HiOutlineSun } from 'react-icons/hi';
 import { NavData } from './NavData';
 import { DropdownMenu } from './DropdownMenu';
@@ -29,7 +29,8 @@ export function NavigationMenu({}: NavigationProps): JSX.Element {
 
   if (!mounted) return <></>;
 
-  const handleToggleTheme = () => {
+  const handleToggleTheme = (e: FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     const targetTheme = resolvedTheme === 'light' ? 'dark' : 'light';
     setTheme(targetTheme);
   };

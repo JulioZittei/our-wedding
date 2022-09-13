@@ -18,7 +18,12 @@ export function DropdownMenu() {
   return (
     <Root>
       <Trigger asChild>
-        <Button aria-label="Acesso ao menu de navegação">
+        <Button
+          aria-label="Acesso ao menu de navegação"
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+        >
           <BiMenuAltLeft />
         </Button>
       </Trigger>
