@@ -17,6 +17,7 @@
     "@radix-ui/react-separator": "^0.1.4",
     "@stitches/react": "^1.2.8",
     "axios": "^0.27.2",
+    "caniuse-lite": "^1.0.30001429",
     "framer-motion": "^6.3.3",
     "leaflet": "^1.8.0",
     "moment": "^2.29.3",
